@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CryptoHugo - Criptomonedas 0.1</string>
+    <string name="title_criptocurrencies">Criptomonedas</string>
+    <string name="title_portfolio">Portafolio</string>
+    <string name="title_notices">Noticias</string>
+    <string name="action_help">Ayuda y soporte</string>
+    <string name="action_terms_conditions">Términos y condiciones</string>
+    <string name="action_developer_info">Info desarrollador</string>
+
+</resources>
