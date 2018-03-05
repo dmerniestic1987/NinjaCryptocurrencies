@@ -11,8 +11,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import ar.com.criptohugo.fragments.CryptoCurrenciesFragment;
-
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private TextView mTextMessage;
