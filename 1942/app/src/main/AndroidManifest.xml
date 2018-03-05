@@ -19,6 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ListExample01Activity"
+            android:label="@string/title_activity_list_example01"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ListActivity2"
+            android:label="@string/title_activity_list2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
