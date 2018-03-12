@@ -10,9 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import ar.com.criptohugo.R;
 import ar.com.criptohugo.bean.Ticker;
@@ -31,6 +29,19 @@ public class TickerArrayAdapter extends ArrayAdapter<Ticker> {
         this.context = context;
     }
 
+    @Override
+    public void add(@Nullable Ticker object) {
+        this.listTicker.add(object);
+        super.add(object);
+    }
+
+    @Override
+    public void clear() {
+        this.listTicker = new ArrayList<>();
+        super.clear();
+    }
+
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -39,11 +50,11 @@ public class TickerArrayAdapter extends ArrayAdapter<Ticker> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View itemView = inflater.inflate(R.layout.item_ticker_list_layout, parent, false);
-        TextView firstLine = itemView.findViewById(R.id.firstLine);
-        firstLine.setText(bean.getFirstLine());
+        TextView firstLine = itemView.findViewById(R.id.tickerPriceUsd);
+        firstLine.setText(bean.getPriceUsd());
 
-        TextView secondLine = itemView.findViewById(R.id.secondLine);
-        secondLine.setText(bean.getSecondLine());
+        TextView secondLine = itemView.findViewById(R.id.tickerPriceBtc);
+        secondLine.setText(bean.getPriceBtc());
 
         return itemView;
     }

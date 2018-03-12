@@ -15,7 +15,7 @@
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
-        android:id="@+id/secondLine"
+        android:id="@+id/tickerPriceBtc"
         android:layout_width="fill_parent"
         android:layout_height="26dip"
         android:layout_alignParentBottom="true"
@@ -24,14 +24,13 @@
         android:ellipsize="marquee"
         android:singleLine="false"
         android:text="Description"
-        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
         android:textSize="12sp" />
 
     <TextView
-        android:id="@+id/firstLine"
+        android:id="@+id/tickerPriceUsd"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/secondLine"
+        android:layout_above="@id/tickerPriceBtc"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_alignWithParentIfMissing="true"

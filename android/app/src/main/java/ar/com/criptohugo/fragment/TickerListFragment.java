@@ -2,13 +2,19 @@ package ar.com.criptohugo.fragment;
 
 import android.content.Context;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +35,7 @@ public class TickerListFragment extends Fragment {
     private ListView listViewTicker;
 
     private OnFragmentInteractionListener mListener;
-
+    private TickerArrayAdapter tickerArrayAdapter;
     public TickerListFragment() {
         // Required empty public constructor
     }
@@ -60,15 +66,8 @@ public class TickerListFragment extends Fragment {
         super.onStart();
         this.listViewTicker = this.getActivity().findViewById(R.id.listViewTicker);
 
-        List<Ticker> listTickers = new ArrayList<>();
-        listTickers.add(new Ticker("JFHF", "HOKJFLS"));
-        listTickers.add(new Ticker(Long.toHexString(System.currentTimeMillis()), " hexa"));
-        listTickers.add(new Ticker("dfasdf", "fadsfasd"));
-        listTickers.add(new Ticker("dfadfa", "adfasdf"));
-        listTickers.add(new Ticker(getContext().getPackageName(), "asdfasdf"));
-
-        TickerArrayAdapter adapter = new TickerArrayAdapter(getContext(), listTickers);
-        listViewTicker.setAdapter(adapter);
+        tickerArrayAdapter = new TickerArrayAdapter(getContext(), new ArrayList<Ticker>());
+        listViewTicker.setAdapter(tickerArrayAdapter);
 
         listViewTicker.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -76,12 +75,14 @@ public class TickerListFragment extends Fragment {
 
             }
         });
+
+        HttpCallTickerListAsyncTask asyn = new HttpCallTickerListAsyncTask();
+        asyn.execute();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ticker_list, container, false);
     }
 
@@ -122,5 +123,40 @@ public class TickerListFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    private class HttpCallTickerListAsyncTask extends AsyncTask<Void, Void, List<Ticker>> {
+
+        @Override
+        protected List<Ticker> doInBackground(Void... voids) {
+            Log.d("TickerList", "AsyncTask doInBackground");
+            final String url = "https://api.coinmarketcap.com/v1/ticker/?limit=10";
+            RestTemplate restTemplate = new RestTemplate();
+            restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+            ResponseEntity<Ticker []> responseEntity = restTemplate.getForEntity(url, Ticker[].class);
+            Ticker [] arrayTicker = responseEntity.getBody();
+            List<Ticker> list = new ArrayList<>();
+            for (int i = 0; i < arrayTicker.length; i++){
+                list.add(arrayTicker[i]);
+            }
+            return list;
+        }
+
+        @Override
+        protected void onPostExecute(List<Ticker> tickers) {
+            super.onPostExecute(tickers);
+            Log.d("TickerList", "AsyncTask onPostExecute - Tickers: " + tickers.size());
+            tickerArrayAdapter.clear();
+            for (Ticker ticker : tickers){
+                tickerArrayAdapter.add(ticker);
+            }
+            tickerArrayAdapter.notifyDataSetChanged();
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            Log.d("TickerList", "AsyncTask o PreExecute");
+        }
     }
 }
