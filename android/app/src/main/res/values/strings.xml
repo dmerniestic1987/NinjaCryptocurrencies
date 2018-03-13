@@ -7,7 +7,14 @@
     <string name="action_terms_conditions">Términos y condiciones</string>
     <string name="action_developer_info">Info desarrollador</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <!-- Ticker Detail: TickerDetailFragment -->
+    <string name="ticker_detail_name">Nombre: </string>
+    <string name="ticker_detail_symbol">Symbolo: </string>
+    <string name="ticker_detail_rank">Ranking: </string>
+    <string name="ticker_detail_priceUsd">Precio en USD: </string>
+    <string name="ticker_detail_priceBtc">Precio en BitCoin: </string>
+    <string name="ticker_detail_volume24hs">Volumen operado 24 Hs: </string>
+    <string name="ticker_detail_marketCapUsd">Total Mercado: </string>
+    <string name="ticker_detail_totalSupply">Total Suplply: </string>
+    <string name="ticker_detail_maxSupply">Max Supply: </string>
 </resources>
