@@ -52,7 +52,7 @@ public class TickerArrayAdapter extends ArrayAdapter<Ticker> {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View itemView = inflater.inflate(R.layout.layout, parent, false);
+        View itemView = inflater.inflate(R.layout.item_ticker_list, parent, false);
         TextView titleTicker = itemView.findViewById(R.id.titleTicker);
         titleTicker.setText(bean.getName());
 
@@ -70,5 +70,14 @@ public class TickerArrayAdapter extends ArrayAdapter<Ticker> {
         TextView valueBtcPrice = itemView.findViewById(R.id.valueBtcPrice);
         valueBtcPrice.setText(formatBtc.format(bean.getPriceBTCBigDecimal()));
         return itemView;
+    }
+
+    /**
+     * Gets a ticket by position
+     * @param position
+     * @return ticker
+     */
+    public Ticker getTickerByPosition(Integer position){
+        return this.listTicker.get(position);
     }
 }

@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,8 +42,7 @@ public class TickerListFragment extends Fragment {
     }
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
+     * Factory to create a new TickerListFragment
      *
      * @return A new instance of fragment TickerListFragment.
      */
@@ -72,6 +72,12 @@ public class TickerListFragment extends Fragment {
         listViewTicker.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                TickerDetailFragment detailFragment = TickerDetailFragment.newInstance(tickerArrayAdapter.getTickerByPosition(position));
+
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.container, detailFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
 
             }
         });
