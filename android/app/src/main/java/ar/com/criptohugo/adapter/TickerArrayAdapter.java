@@ -9,9 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
+import ar.com.criptohugo.Config.ConfigManager;
 import ar.com.criptohugo.R;
 import ar.com.criptohugo.bean.Ticker;
 
@@ -49,13 +52,23 @@ public class TickerArrayAdapter extends ArrayAdapter<Ticker> {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View itemView = inflater.inflate(R.layout.item_ticker_list_layout, parent, false);
-        TextView firstLine = itemView.findViewById(R.id.tickerPriceUsd);
-        firstLine.setText(bean.getPriceUsd());
+        View itemView = inflater.inflate(R.layout.layout, parent, false);
+        TextView titleTicker = itemView.findViewById(R.id.titleTicker);
+        titleTicker.setText(bean.getName());
 
-        TextView secondLine = itemView.findViewById(R.id.tickerPriceBtc);
-        secondLine.setText(bean.getPriceBtc());
 
+
+        NumberFormat format = NumberFormat.getInstance(ConfigManager.getLocale());
+        format.setMinimumFractionDigits(2);
+        format.setMaximumFractionDigits(6);
+        TextView valueUsdPrice = itemView.findViewById(R.id.valueUsdPrice);
+        valueUsdPrice.setText(format.format(bean.getPriceUsdBigDecimal()));
+
+        NumberFormat formatBtc = NumberFormat.getInstance(ConfigManager.getLocale());
+        format.setMinimumFractionDigits(1);
+        format.setMaximumFractionDigits(9);
+        TextView valueBtcPrice = itemView.findViewById(R.id.valueBtcPrice);
+        valueBtcPrice.setText(formatBtc.format(bean.getPriceBTCBigDecimal()));
         return itemView;
     }
 }

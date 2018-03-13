@@ -1,6 +1,9 @@
 package ar.com.criptohugo.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.math.BigDecimal;
 
 /**
  * Ticker... information about an specific Crytocurrency
@@ -84,6 +87,10 @@ public class Ticker {
         return priceUsd;
     }
 
+    @JsonIgnore
+    public BigDecimal getPriceUsdBigDecimal(){
+        return new BigDecimal(this.priceUsd);
+    }
     public void setPriceUsd(String priceUsd) {
         this.priceUsd = priceUsd;
     }
@@ -92,7 +99,10 @@ public class Ticker {
     public String getPriceBtc() {
         return priceBtc;
     }
-
+    @JsonIgnore
+    public BigDecimal getPriceBTCBigDecimal(){
+        return new BigDecimal(this.priceBtc);
+    }
     public void setPriceBtc(String priceBtc) {
         this.priceBtc = priceBtc;
     }
