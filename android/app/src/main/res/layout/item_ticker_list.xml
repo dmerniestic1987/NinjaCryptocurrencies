@@ -30,7 +30,7 @@
                 android:layout_weight="2"
                 android:text="BitCoin"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/greenPrimary"
                 android:textStyle="bold|italic" />
         </TableRow>
 

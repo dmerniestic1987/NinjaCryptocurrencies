@@ -1,75 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorWhite">
 
-<!--
-    private String id;
-    private String name;
-    private String symbol;
-    private String rank;
-    private String priceUsd;
-    private String priceBtc;
-    private String v24hVolumeUsd;
-    private String marketCapUsd;
-    private String availableSupply;
-    private String totalSupply;
-    private String percentChange1h;
-    private String percentChange24h;
-    private String percentChange7d;
-    private String lastUpdated;
-    private String maxSupply;
-
-        <string name="ticker_detail_name">Nombre: </string>
-    <string name="ticker_detail_symbol">Symbolo: </string>
-    <string name="ticker_detail_rank">Ranking: </string>
-    <string name="ticker_detail_priceUsd">Precio en USD: </string>
-    <string name="ticker_detail_priceBtc">Precio en BitCoin: </string>
-    <string name="ticker_detail_volume24hs">Volumen operado 24 Hs: </string>
-    <string name="ticker_detail_marketCapUsd">Total Mercado: </string>
-    <string name="ticker_detail_totalSupply">Total Suplply: </string>
-    <string name="ticker_detail_maxSupply">Max Supply: </string>
--->
     <LinearLayout android:id="@+id/titleTicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorTitle"
+        android:layout_marginTop="20dp"
+        android:background="@color/greenPrimary"
         android:paddingBottom="6dp">
+
         <ImageView
             android:id="@+id/imageView"
-            android:layout_height="wrap_content"
             android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginTop="4dp"
+            android:layout_weight="2"
+            android:contentDescription="@string/zero_decimal"
             app:srcCompat="@mipmap/ic_launcher" />
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="5"
-            android:text="@string/ticker_detail_name"
-            android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nameTickerDetail"
+                style="@android:style/Widget.DeviceDefault.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/ticker_detail_name"
+                android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+
+            <TextView
+                android:id="@+id/symbolTickerDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/ticker_detail_symbol"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/infoPriceUsd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorTitle">
+        android:background="@color/greenPrimary">
 
         <TextView
-            android:id="@+id/usdPrice"
-            android:layout_width="wrap_content"
+            android:id="@+id/lblUsdPrice"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="@string/ticker_detail_name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse" />
+            android:layout_weight="2"
+            android:text="@string/ticker_detail_priceUsd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+
+        <TextView
+            android:id="@+id/valueUsdPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="@string/zero_decimal"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+            tools:ignore="RtlCompat" />
+
+
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/infoPriceBtc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/greenPrimary">
+
+        <TextView
+            android:id="@+id/lblBtcPrice"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="@string/ticker_detail_priceBtc"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+
+        <TextView
+            android:id="@+id/valueBtcPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="@string/zero_decimal"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+            tools:ignore="RtlCompat" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/infoMarketCapUsd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/greenPrimary">
+
+        <TextView
+            android:id="@+id/lblCapMarketUsd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="@string/ticker_detail_marketCapUsd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+
+        <TextView
+            android:id="@+id/valueMarketCapUsd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="@string/zero_decimal"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+            tools:ignore="RtlCompat" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/infoTotalSuppy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/greenPrimary">
+
+        <TextView
+            android:id="@+id/lblTotalSupply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="@string/ticker_detail_totalSupply"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+
+        <TextView
+            android:id="@+id/valueTotalSupply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="@string/zero_decimal"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+            tools:ignore="RtlCompat" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/infoVolOp24Hs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/greenPrimary">
+
+        <TextView
+            android:id="@+id/lblVol24Hs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="@string/ticker_detail_volume24hs"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+
+        <TextView
+            android:id="@+id/valueVol24hs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="@string/zero_decimal"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+            tools:ignore="RtlCompat" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/infoMaxSuply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/greenPrimary">
+
+        <TextView
+            android:id="@+id/lblMaxSupply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="@string/ticker_detail_maxSupply"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+
+        <TextView
+            android:id="@+id/valueMaxSupply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="@string/zero_decimal"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+            tools:ignore="RtlCompat" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"
+        android:background="@color/greenPrimaryDark"
+        android:text="@string/update"
+        android:textColor="@color/colorWhite" />
 </LinearLayout>

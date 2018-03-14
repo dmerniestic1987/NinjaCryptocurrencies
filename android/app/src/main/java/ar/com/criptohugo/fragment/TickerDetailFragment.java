@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import ar.com.criptohugo.R;
 import ar.com.criptohugo.bean.Ticker;
@@ -34,10 +35,46 @@ public class TickerDetailFragment extends Fragment {
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        TextView nameTickerDetail = this.getActivity().findViewById(R.id.nameTickerDetail);
+        nameTickerDetail.setText(this.ticker.getName());
+
+        TextView symbolTickerDetail = this.getActivity().findViewById(R.id.symbolTickerDetail);
+        symbolTickerDetail.setText(this.ticker.getSymbol());
+
+        TextView valueUsdPrice = this.getActivity().findViewById(R.id.valueUsdPrice);
+        valueUsdPrice.setText(this.ticker.getPriceUsd());
+
+        TextView valueBtcPrice = this.getActivity().findViewById(R.id.valueBtcPrice);
+        valueBtcPrice.setText(this.ticker.getPriceBtc());
+
+        TextView valueMarketCapUsd = this.getActivity().findViewById(R.id.valueMarketCapUsd);
+        valueMarketCapUsd.setText(this.ticker.getMarketCapUsd());
+
+        TextView valueTotalSupply = this.getActivity().findViewById(R.id.valueTotalSupply);
+        valueTotalSupply.setText(this.ticker.getTotalSupply());
+
+        TextView valueVol24hs = this.getActivity().findViewById(R.id.valueVol24hs);
+        valueVol24hs.setText(this.ticker.getV24hVolumeUsd());
+
+        TextView valueMaxSupply = this.getActivity().findViewById(R.id.valueMaxSupply);
+        valueMaxSupply.setText(this.ticker.getMaxSupply());
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ticker_detail, container, false);
+        View viewFragmentDetail = inflater.inflate(R.layout.fragment_ticker_detail, container, false);
+
+
+        return viewFragmentDetail;
     }
 
     @Override
