@@ -23,6 +23,7 @@ import java.util.List;
 import ar.com.criptohugo.R;
 import ar.com.criptohugo.adapter.TickerArrayAdapter;
 import ar.com.criptohugo.bean.Ticker;
+import ar.com.criptohugo.manager.ListTickerManager;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,10 +34,12 @@ import ar.com.criptohugo.bean.Ticker;
  * create an instance of this fragment.
  */
 public class TickerListFragment extends Fragment {
-    private ListView listViewTicker;
+    private static final String TAG = "TickerListFragment";
 
+    private ListView listViewTicker;
     private OnFragmentInteractionListener mListener;
     private TickerArrayAdapter tickerArrayAdapter;
+
     public TickerListFragment() {
         // Required empty public constructor
     }
@@ -56,10 +59,9 @@ public class TickerListFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate - clean ListTickerManager");
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-
-        }
+        ListTickerManager.getInstance().clearTickers();
     }
 
     public void onStart(){
@@ -82,8 +84,8 @@ public class TickerListFragment extends Fragment {
             }
         });
 
-        HttpCallTickerListAsyncTask asyn = new HttpCallTickerListAsyncTask();
-        asyn.execute();
+        HttpCallTickerListAsyncTask asyncTas = new HttpCallTickerListAsyncTask();
+        asyncTas.execute();
     }
 
     @Override
@@ -131,26 +133,31 @@ public class TickerListFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
+
+    /**
+     * Clase que llama a la consulta de tickers
+     */
     private class HttpCallTickerListAsyncTask extends AsyncTask<Void, Void, List<Ticker>> {
 
         @Override
         protected List<Ticker> doInBackground(Void... voids) {
             Log.d("TickerList", "AsyncTask doInBackground");
-            final String url = "https://api.coinmarketcap.com/v1/ticker/?limit=10";
+            final String url = "https://api.coinmarketcap.com/v1/ticker/?limit=100";
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
             ResponseEntity<Ticker []> responseEntity = restTemplate.getForEntity(url, Ticker[].class);
+
             Ticker [] arrayTicker = responseEntity.getBody();
-            List<Ticker> list = new ArrayList<>();
-            for (int i = 0; i < arrayTicker.length; i++){
-                list.add(arrayTicker[i]);
-            }
-            return list;
+            ListTickerManager listTickerManager = ListTickerManager.getInstance();
+            listTickerManager.addOrUpdateAll(arrayTicker);
+
+            return listTickerManager.getListTicker();
         }
 
         @Override
         protected void onPostExecute(List<Ticker> tickers) {
             super.onPostExecute(tickers);
+
             Log.d("TickerList", "AsyncTask onPostExecute - Tickers: " + tickers.size());
             tickerArrayAdapter.clear();
             for (Ticker ticker : tickers){

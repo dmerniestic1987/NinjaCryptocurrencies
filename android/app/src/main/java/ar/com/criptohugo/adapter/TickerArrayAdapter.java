@@ -34,14 +34,14 @@ public class TickerArrayAdapter extends ArrayAdapter<Ticker> {
 
     @Override
     public void add(@Nullable Ticker object) {
-        this.listTicker.add(object);
         super.add(object);
+        this.listTicker.add(object);
     }
 
     @Override
     public void clear() {
-        this.listTicker = new ArrayList<>();
         super.clear();
+        this.listTicker.clear();
     }
 
 
@@ -53,10 +53,10 @@ public class TickerArrayAdapter extends ArrayAdapter<Ticker> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View itemView = inflater.inflate(R.layout.item_ticker_list, parent, false);
+
+        itemView.setId(bean.getId().hashCode());
         TextView titleTicker = itemView.findViewById(R.id.titleTicker);
         titleTicker.setText(bean.getName());
-
-
 
         NumberFormat format = NumberFormat.getInstance(ConfigManager.getLocale());
         format.setMinimumFractionDigits(2);
