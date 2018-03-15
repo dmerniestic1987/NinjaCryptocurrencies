@@ -71,6 +71,9 @@ public class TickerListFragment extends Fragment {
         tickerArrayAdapter = new TickerArrayAdapter(getContext(), new ArrayList<Ticker>());
         listViewTicker.setAdapter(tickerArrayAdapter);
 
+        HttpCallTickerListAsyncTask asyncTas = new HttpCallTickerListAsyncTask();
+        asyncTas.execute();
+
         listViewTicker.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
@@ -83,9 +86,6 @@ public class TickerListFragment extends Fragment {
 
             }
         });
-
-        HttpCallTickerListAsyncTask asyncTas = new HttpCallTickerListAsyncTask();
-        asyncTas.execute();
     }
 
     @Override
