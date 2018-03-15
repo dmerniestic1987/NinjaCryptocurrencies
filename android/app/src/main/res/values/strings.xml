@@ -8,14 +8,14 @@
     <string name="action_developer_info">Info desarrollador</string>
 
     <!-- Ticker Detail: TickerDetailFragment -->
-    <string name="ticker_detail_name">Nombre: </string>
-    <string name="ticker_detail_symbol">Símbolo: </string>
-    <string name="ticker_detail_rank">Ranking: </string>
-    <string name="ticker_detail_priceUsd">Precio en USD: </string>
-    <string name="ticker_detail_priceBtc">Precio en BTC: </string>
-    <string name="ticker_detail_volume24hs">Vol. Op. 24 Hs: </string>
-    <string name="ticker_detail_marketCapUsd">Total Mercado USD: </string>
-    <string name="ticker_detail_totalSupply">Oferta Total: </string>
+    <string name="ticker_detail_name">Nombre</string>
+    <string name="ticker_detail_symbol">Símbolo</string>
+    <string name="ticker_detail_rank">Ranking</string>
+    <string name="ticker_detail_priceUsd">Precio en USD</string>
+    <string name="ticker_detail_priceBtc">Precio en BTC</string>
+    <string name="ticker_detail_volume24hs">Volumne (24 Hs)</string>
+    <string name="ticker_detail_marketCapUsd">Cap. Mercado USD</string>
+    <string name="ticker_detail_totalSupply">Total en Circulación</string>
     <string name="ticker_detail_maxSupply">Oferta Max: </string>
     <string name="zero_decimal">0,00</string>
     <string name="update">Actualizar!</string>
