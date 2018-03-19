@@ -1,8 +1,9 @@
 package ar.com.criptohugo.manager;
 
+import org.apache.commons.collections4.OrderedMap;
+import org.apache.commons.collections4.map.ListOrderedMap;
+
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,12 +15,12 @@ import ar.com.criptohugo.bean.Ticker;
  */
 
 public class ListTickerManager {
-    private Map<String, Ticker> mapTicker;
+    private OrderedMap<String, Ticker> mapTicker;
     private static ListTickerManager instance = null;
 
     private ListTickerManager(){
         super();
-        this.mapTicker = new HashMap<>();
+        this.mapTicker = new ListOrderedMap<>();
     }
 
     /**
@@ -33,7 +34,7 @@ public class ListTickerManager {
 
         return instance;
     }
-    public void addOrUpdateAll(Ticker [] arrayTicker){
+    public synchronized void addOrUpdateAll(Ticker [] arrayTicker){
         for (int i = 0; i < arrayTicker.length; i++){
             this.mapTicker.put(arrayTicker[i].getId(), arrayTicker[i]);
         }
@@ -56,7 +57,7 @@ public class ListTickerManager {
         return mapTicker;
     }
 
-    public void setMapTicker(Map<String, Ticker> mapTicker) {
+    public void setMapTicker(OrderedMap<String, Ticker> mapTicker) {
         this.mapTicker = mapTicker;
     }
 

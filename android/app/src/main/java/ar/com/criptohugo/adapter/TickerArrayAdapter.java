@@ -10,11 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import ar.com.criptohugo.Config.ConfigManager;
 import ar.com.criptohugo.R;
 import ar.com.criptohugo.bean.Ticker;
 
@@ -58,13 +56,13 @@ public class TickerArrayAdapter extends ArrayAdapter<Ticker> {
         TextView titleTicker = itemView.findViewById(R.id.titleTicker);
         titleTicker.setText(bean.getName());
 
-        NumberFormat format = NumberFormat.getInstance(ConfigManager.getLocale());
+        NumberFormat format = NumberFormat.getInstance(Locale.ENGLISH);
         format.setMinimumFractionDigits(2);
         format.setMaximumFractionDigits(6);
         TextView valueUsdPrice = itemView.findViewById(R.id.valueUsdPrice);
         valueUsdPrice.setText(format.format(bean.getPriceUsdBigDecimal()));
 
-        NumberFormat formatBtc = NumberFormat.getInstance(ConfigManager.getLocale());
+        NumberFormat formatBtc = NumberFormat.getInstance(Locale.ENGLISH);
         format.setMinimumFractionDigits(1);
         format.setMaximumFractionDigits(9);
         TextView valueBtcPrice = itemView.findViewById(R.id.valueBtcPrice);

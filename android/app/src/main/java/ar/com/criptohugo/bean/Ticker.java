@@ -3,6 +3,7 @@ package ar.com.criptohugo.bean;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
@@ -10,7 +11,7 @@ import java.math.BigDecimal;
  * Created by dmernies on 6/3/18.
  */
 
-public class Ticker {
+public class Ticker implements Serializable {
     private String id;
     private String name;
     private String symbol;

@@ -68,7 +68,7 @@ public class TickerListFragment extends Fragment {
         super.onStart();
         this.listViewTicker = this.getActivity().findViewById(R.id.listViewTicker);
 
-        tickerArrayAdapter = new TickerArrayAdapter(getContext(), new ArrayList<Ticker>());
+        tickerArrayAdapter = new TickerArrayAdapter(getContext(), ListTickerManager.getInstance().getListTicker());
         listViewTicker.setAdapter(tickerArrayAdapter);
 
         HttpCallTickerListAsyncTask asyncTas = new HttpCallTickerListAsyncTask();
@@ -77,7 +77,12 @@ public class TickerListFragment extends Fragment {
         listViewTicker.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                TickerDetailFragment detailFragment = TickerDetailFragment.newInstance(tickerArrayAdapter.getTickerByPosition(position));
+                Ticker ticker = tickerArrayAdapter.getTickerByPosition(position);
+                TickerDetailFragment detailFragment = TickerDetailFragment.newInstance();
+
+                Bundle tickerBundle = new Bundle();
+                tickerBundle.putSerializable("ticker", ticker);
+                detailFragment.setArguments(tickerBundle);
 
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.container, detailFragment);
@@ -142,7 +147,7 @@ public class TickerListFragment extends Fragment {
         @Override
         protected List<Ticker> doInBackground(Void... voids) {
             Log.d("TickerList", "AsyncTask doInBackground");
-            final String url = "https://api.coinmarketcap.com/v1/ticker/?limit=100";
+            final String url = "https://api.coinmarketcap.com/v1/ticker/?limit=50";
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
             ResponseEntity<Ticker []> responseEntity = restTemplate.getForEntity(url, Ticker[].class);
