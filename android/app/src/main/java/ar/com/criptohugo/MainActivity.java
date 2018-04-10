@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements TickerListFragmen
                     break;
             }
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.main_container, fragment).commit();
+                    .replace(R.id.main_container, fragment).commit();
             return true;
         }
     };

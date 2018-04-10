@@ -77,12 +77,4 @@ public class TickerDetailFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
     }
-
-    public Ticker getTicker() {
-        return ticker;
-    }
-
-    public void setTicker(Ticker ticker) {
-        this.ticker = ticker;
-    }
 }
