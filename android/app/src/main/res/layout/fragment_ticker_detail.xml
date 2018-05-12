@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorWhite">
+    android:background="@color/colorDarkGrayBackground">
 
     <LinearLayout android:id="@+id/titleTicker"
         android:layout_width="match_parent"
@@ -221,5 +221,5 @@
         android:layout_margin="30dp"
         android:background="@color/greenPrimaryDark"
         android:text="@string/update"
-        android:textColor="@color/colorWhite" />
+        android:textColor="@color/colorDarkGrayBackground" />
 </LinearLayout>
