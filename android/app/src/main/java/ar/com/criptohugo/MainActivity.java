@@ -1,6 +1,7 @@
 package ar.com.criptohugo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import ar.com.criptohugo.activity.InfoDeveloperActivity;
 import ar.com.criptohugo.fragment.NoticesFragment;
 import ar.com.criptohugo.fragment.PortfolioFragment;
 import ar.com.criptohugo.fragment.TickerListFragment;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements TickerListFragmen
                 case R.id.navigation_portfolio:
                     fragment = PortfolioFragment.newInstance();
                     break;
-                case R.id.navigation_notices:
+                case R.id.navigation_config:
                     fragment = NoticesFragment.newInstance();
                     break;
                 default:
@@ -60,8 +62,8 @@ public class MainActivity extends AppCompatActivity implements TickerListFragmen
 
         if (id == R.id.action_developer_info) {
             Log.i(TAG, "developer info");
-            Toast toast = Toast.makeText(context, R.string.action_developer_info, duration);
-            toast.show();
+            Intent i = new Intent(this, InfoDeveloperActivity.class);
+            startActivity(i);
             return true;
         }
 

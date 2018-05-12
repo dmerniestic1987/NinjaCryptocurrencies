@@ -1,7 +1,6 @@
 package ar.com.criptohugo.fragment;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -70,7 +69,7 @@ public class NoticesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notices, container, false);
+        return inflater.inflate(R.layout.fragment_config, container, false);
     }
 
 

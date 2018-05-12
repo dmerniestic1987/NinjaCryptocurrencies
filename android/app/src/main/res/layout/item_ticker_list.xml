@@ -30,9 +30,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:text="BitCoin"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
                 android:textColor="@color/greenPrimary"
-                android:textStyle="bold|italic" />
+                android:textSize="14sp" />
         </TableRow>
 
         <TableRow android:id="@+id/rowDolarPrice"
@@ -46,7 +46,8 @@
                 android:layout_weight="2"
                 android:text="Precio USD"
                 android:textAppearance="@android:style/TextAppearance.Material.Subhead"
-                android:textColor="@color/colorLightGrayTextColor" />
+                android:textColor="@color/colorLightGrayTextColor"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/lblBtcPrice"
@@ -55,7 +56,8 @@
                 android:layout_weight="2"
                 android:text="Precio BTC"
                 android:textAppearance="@android:style/TextAppearance.Material.Subhead"
-                android:textColor="@color/colorLightGrayTextColor" />
+                android:textColor="@color/colorLightGrayTextColor"
+                android:textSize="14sp" />
         </TableRow>
 
         <TableRow android:id="@+id/lblBtcPRice"
@@ -70,7 +72,7 @@
                 android:layout_weight="2"
                 android:text="19999999999.99"
                 android:textColor="@color/colorLightGrayTextColor"
-                android:textSize="15sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/valueBtcPrice"
@@ -80,7 +82,7 @@
                 android:layout_weight="2"
                 android:text="19999999999.99"
                 android:textColor="@color/colorLightGrayTextColor"
-                android:textSize="15sp" />
+                android:textSize="14sp" />
         </TableRow>
     </TableLayout>
 
