@@ -1,4 +1,4 @@
-package ar.com.criptohugo.fragment;
+package ar.com.criptocurrencies.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import ar.com.criptohugo.R;
-import ar.com.criptohugo.bean.Ticker;
+import ar.com.criptocurrencies.R;
+import ar.com.criptocurrencies.bean.Ticker;
 
 
 public class TickerDetailFragment extends Fragment {

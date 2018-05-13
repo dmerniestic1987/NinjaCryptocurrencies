@@ -1,4 +1,4 @@
-package ar.com.criptohugo.adapter;
+package ar.com.criptocurrencies.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -13,8 +13,8 @@ import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 
-import ar.com.criptohugo.R;
-import ar.com.criptohugo.bean.Ticker;
+import ar.com.criptocurrencies.R;
+import ar.com.criptocurrencies.bean.Ticker;
 
 /**
  * Created by dmernies on 6/3/18.

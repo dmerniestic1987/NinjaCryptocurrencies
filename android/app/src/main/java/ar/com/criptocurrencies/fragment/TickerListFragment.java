@@ -1,4 +1,4 @@
-package ar.com.criptohugo.fragment;
+package ar.com.criptocurrencies.fragment;
 
 import android.content.Context;
 import android.net.Uri;
@@ -19,10 +19,10 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-import ar.com.criptohugo.R;
-import ar.com.criptohugo.adapter.TickerArrayAdapter;
-import ar.com.criptohugo.bean.Ticker;
-import ar.com.criptohugo.manager.ListTickerManager;
+import ar.com.criptocurrencies.R;
+import ar.com.criptocurrencies.adapter.TickerArrayAdapter;
+import ar.com.criptocurrencies.bean.Ticker;
+import ar.com.criptocurrencies.manager.ListTickerManager;
 
 /**
  * A simple {@link Fragment} subclass.

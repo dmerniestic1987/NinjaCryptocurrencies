@@ -1,4 +1,4 @@
-package ar.com.criptohugo;
+package ar.com.criptocurrencies;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,10 +13,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import ar.com.criptohugo.activity.InfoDeveloperActivity;
-import ar.com.criptohugo.fragment.NoticesFragment;
-import ar.com.criptohugo.fragment.PortfolioFragment;
-import ar.com.criptohugo.fragment.TickerListFragment;
+import ar.com.criptocurrencies.activity.InfoDeveloperActivity;
+import ar.com.criptocurrencies.fragment.CodeFragment;
+import ar.com.criptocurrencies.fragment.PortfolioFragment;
+import ar.com.criptocurrencies.fragment.TickerListFragment;
 
 public class MainActivity extends AppCompatActivity implements TickerListFragment.OnFragmentInteractionListener {
     private static final String TAG = "MainActivity";
@@ -31,11 +31,11 @@ public class MainActivity extends AppCompatActivity implements TickerListFragmen
                 case R.id.navigation_criptocurrencies:
                     fragment = TickerListFragment.newInstance();
                     break;
-                case R.id.navigation_portfolio:
+                case R.id.navigation_ads:
                     fragment = PortfolioFragment.newInstance();
                     break;
-                case R.id.navigation_config:
-                    fragment = NoticesFragment.newInstance();
+                case R.id.navigation_code:
+                    fragment = CodeFragment.newInstance();
                     break;
                 default:
                     fragment = TickerListFragment.newInstance();

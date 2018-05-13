@@ -1,4 +1,4 @@
-package ar.com.criptohugo.bean;
+package ar.com.criptocurrencies.bean;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,4 +1,4 @@
-package ar.com.criptohugo.activity;
+package ar.com.criptocurrencies.activity;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -10,9 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.WebView;
-import android.webkit.WebViewFragment;
 
-import ar.com.criptohugo.R;
+import ar.com.criptocurrencies.R;
 
 /**
  * Muestra la información del desarrollador con un WebView
@@ -26,6 +25,7 @@ public class InfoDeveloperActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info_developer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle(getString(R.string.action_developer_info));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

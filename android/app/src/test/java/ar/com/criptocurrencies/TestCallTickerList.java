@@ -1,4 +1,4 @@
-package ar.com.criptohugo;
+package ar.com.criptocurrencies;
 
 import org.junit.Test;
 

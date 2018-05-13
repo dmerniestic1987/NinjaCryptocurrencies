@@ -1,4 +1,4 @@
-package ar.com.criptohugo;
+package ar.com.criptocurrencies;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

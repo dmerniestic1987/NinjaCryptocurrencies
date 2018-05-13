@@ -1,4 +1,4 @@
-package ar.com.criptohugo.manager;
+package ar.com.criptocurrencies.manager;
 
 import org.apache.commons.collections4.OrderedMap;
 import org.apache.commons.collections4.map.ListOrderedMap;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import ar.com.criptohugo.bean.Ticker;
+import ar.com.criptocurrencies.bean.Ticker;
 
 /**
  * Administra la lista de los tickers

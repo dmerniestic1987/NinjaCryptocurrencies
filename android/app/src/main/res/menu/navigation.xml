@@ -7,13 +7,13 @@
         android:title="@string/title_criptocurrencies" />
 
     <item
-        android:id="@+id/navigation_portfolio"
+        android:id="@+id/navigation_ads"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_portfolio" />
+        android:title="@string/title_ads" />
 
     <item
-        android:id="@+id/navigation_config"
-        android:icon="@drawable/ic_settings_black_24dp"
-        android:title="@string/title_config" />
+        android:id="@+id/navigation_code"
+        android:icon="@drawable/ic_code_black_24dp"
+        android:title="@string/title_code" />
 
 </menu>

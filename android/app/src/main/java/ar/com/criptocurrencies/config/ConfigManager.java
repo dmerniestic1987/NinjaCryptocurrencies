@@ -1,4 +1,4 @@
-package ar.com.criptohugo.Config;
+package ar.com.criptocurrencies.Config;
 
 import java.util.Locale;
 
