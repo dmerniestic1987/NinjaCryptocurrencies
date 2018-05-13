@@ -1,4 +1,8 @@
 <resources>
+    <!-- URL -->
+    <string name="url_info_developer">https://developer.android.com/reference/android/webkit/WebView</string>
+    <string name="mailto_info_developer">mailto:diego.alejandro.mernies@bbva.com</string>
+
     <string name="app_name">Cryto Currencies</string>
     <string name="title_criptocurrencies">Criptomonedas</string>
     <string name="title_portfolio">Portafolio</string>
@@ -18,6 +22,7 @@
     <string name="ticker_detail_totalSupply">Total en Circulación</string>
     <string name="ticker_detail_maxSupply">Oferta Max: </string>
     <string name="error_ouch">Ouch!!! Hubo un error</string>
+    <string name="error_envio_main">Ouch!!! Hubo un error. No se pudo enviar el mail.</string>
     <string name="zero_decimal">0,00</string>
     <string name="update">Actualizar!</string>
 

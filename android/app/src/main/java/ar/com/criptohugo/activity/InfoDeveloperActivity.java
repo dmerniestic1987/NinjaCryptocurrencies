@@ -14,6 +14,9 @@ import android.webkit.WebViewFragment;
 
 import ar.com.criptohugo.R;
 
+/**
+ * Muestra la información del desarrollador con un WebView
+ */
 public class InfoDeveloperActivity extends AppCompatActivity {
     private WebView webViewInfoDeveloper;
 
@@ -30,19 +33,19 @@ public class InfoDeveloperActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-                emailIntent.setData(Uri.parse("mailto:diego.alejandro.mernies@bbva.com"));
+                emailIntent.setData(Uri.parse(getString(R.string.mailto_info_developer)));
 
                 try {
                     startActivity(emailIntent);
                 } catch (ActivityNotFoundException e) {
-                    Snackbar.make(view, "No se pude enviar mail", Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, getString(R.string.error_envio_main), Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
             }
         });
 
         webViewInfoDeveloper = (WebView) this.findViewById(R.id.webInfoDeveloper);
-        webViewInfoDeveloper.loadUrl("https://developer.android.com/reference/android/webkit/WebView");
+        webViewInfoDeveloper.loadUrl(getString(R.string.url_info_developer));
     }
 
 }
