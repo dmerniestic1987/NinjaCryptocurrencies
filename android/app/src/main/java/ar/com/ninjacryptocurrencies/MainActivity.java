@@ -1,4 +1,4 @@
-package ar.com.criptocurrencies;
+package ar.com.ninjacryptocurrencies;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,10 +13,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import ar.com.criptocurrencies.activity.InfoDeveloperActivity;
-import ar.com.criptocurrencies.fragment.CodeFragment;
-import ar.com.criptocurrencies.fragment.PortfolioFragment;
-import ar.com.criptocurrencies.fragment.TickerListFragment;
+import ar.com.ninjacryptocurrencies.activity.InfoDeveloperActivity;
+import ar.com.ninjacryptocurrencies.fragment.CodeFragment;
+import ar.com.ninjacryptocurrencies.fragment.PortfolioFragment;
+import ar.com.ninjacryptocurrencies.fragment.TickerListFragment;
 
 public class MainActivity extends AppCompatActivity implements TickerListFragment.OnFragmentInteractionListener {
     private static final String TAG = "MainActivity";

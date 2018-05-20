@@ -1,4 +1,4 @@
-package ar.com.criptocurrencies.manager;
+package ar.com.ninjacryptocurrencies.manager;
 
 import org.apache.commons.collections4.OrderedMap;
 import org.apache.commons.collections4.map.ListOrderedMap;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import ar.com.criptocurrencies.bean.Ticker;
+import ar.com.ninjacryptocurrencies.bean.Ticker;
 
 /**
  * Administra la lista de los tickers

@@ -1,4 +1,4 @@
-package ar.com.criptocurrencies.fragment;
+package ar.com.ninjacryptocurrencies.fragment;
 
 import android.content.Context;
 import android.net.Uri;
@@ -19,10 +19,10 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-import ar.com.criptocurrencies.R;
-import ar.com.criptocurrencies.adapter.TickerArrayAdapter;
-import ar.com.criptocurrencies.bean.Ticker;
-import ar.com.criptocurrencies.manager.ListTickerManager;
+import ar.com.ninjacryptocurrencies.R;
+import ar.com.ninjacryptocurrencies.adapter.TickerArrayAdapter;
+import ar.com.ninjacryptocurrencies.bean.Ticker;
+import ar.com.ninjacryptocurrencies.manager.ListTickerManager;
 
 /**
  * A simple {@link Fragment} subclass.

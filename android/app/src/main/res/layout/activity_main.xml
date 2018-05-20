@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ar.com.criptocurrencies.MainActivity"
+    tools:context="ar.com.ninjacryptocurrencies.MainActivity"
     android:background="@color/colorDarkGrayBackground">
 
     <android.support.design.widget.BottomNavigationView

@@ -1,4 +1,4 @@
-package ar.com.criptocurrencies.fragment;
+package ar.com.ninjacryptocurrencies.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import ar.com.criptocurrencies.R;
+import ar.com.ninjacryptocurrencies.R;
 
 /**
  * A simple {@link Fragment} subclass.

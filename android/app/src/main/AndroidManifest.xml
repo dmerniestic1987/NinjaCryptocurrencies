@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ar.com.criptocurrencies">
+    package="ar.com.ninjacryptocurrencies">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="ar.com.criptocurrencies.MainActivity"
+            android:name="ar.com.ninjacryptocurrencies.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="ar.com.criptocurrencies.activity.InfoDeveloperActivity"
+            android:name="ar.com.ninjacryptocurrencies.activity.InfoDeveloperActivity"
             android:label="@string/title_activity_info_developer"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

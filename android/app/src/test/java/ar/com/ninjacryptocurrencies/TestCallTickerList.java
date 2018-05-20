@@ -1,4 +1,4 @@
-package ar.com.criptocurrencies;
+package ar.com.ninjacryptocurrencies;
 
 import org.junit.Test;
 

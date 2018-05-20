@@ -1,4 +1,4 @@
-package ar.com.criptocurrencies.bean;
+package ar.com.ninjacryptocurrencies.bean;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;

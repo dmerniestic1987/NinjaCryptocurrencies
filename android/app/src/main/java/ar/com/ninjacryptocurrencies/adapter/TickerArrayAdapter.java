@@ -1,4 +1,4 @@
-package ar.com.criptocurrencies.adapter;
+package ar.com.ninjacryptocurrencies.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -13,8 +13,8 @@ import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 
-import ar.com.criptocurrencies.R;
-import ar.com.criptocurrencies.bean.Ticker;
+import ar.com.ninjacryptocurrencies.R;
+import ar.com.ninjacryptocurrencies.bean.Ticker;
 
 /**
  * Created by dmernies on 6/3/18.

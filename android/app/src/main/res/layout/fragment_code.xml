@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorDarkGrayBackground"
-    tools:context="ar.com.criptocurrencies.fragment.CodeFragment">
+    tools:context="ar.com.ninjacryptocurrencies.fragment.CodeFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

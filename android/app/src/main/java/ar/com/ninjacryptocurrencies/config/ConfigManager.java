@@ -1,4 +1,4 @@
-package ar.com.criptocurrencies.Config;
+package ar.com.ninjacryptocurrencies.Config;
 
 import java.util.Locale;
 
