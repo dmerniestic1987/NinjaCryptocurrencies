@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("ar.com.criptohugo", appContext.getPackageName());
+        assertEquals("ar.com.ninjacryptocurrencies", appContext.getPackageName());
     }
 }
