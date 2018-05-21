@@ -8,4 +8,5 @@
     <color name="colorDarkGrayBackground">#333333</color>
     <color name="colorLightGrayTextColor">#f1efed</color>
     <color name="purpleText">#9c29a1</color>
+    <color name="red_warning">#fc5569</color>
 </resources>
