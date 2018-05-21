@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.math.BigDecimal;
@@ -59,6 +60,19 @@ public class TickerArrayAdapter extends ArrayAdapter<Ticker> {
         }
         else{
             itemView = convertView;
+        }
+
+        ImageView imageView = itemView.findViewById(R.id.imageView);
+        try {
+            int idImage = imageView.getResources().getIdentifier(bean.getId().replace("-", "_").toLowerCase(), "drawable", context.getPackageName());
+            if (idImage > 0) {
+                imageView.setImageResource(idImage);
+            }
+            else{
+                imageView.setImageResource(R.mipmap.ic_launcher);
+            }
+        } catch (Exception e) {
+            imageView.setImageResource(R.mipmap.ic_launcher);
         }
 
         itemView.setId(bean.getId().hashCode());
