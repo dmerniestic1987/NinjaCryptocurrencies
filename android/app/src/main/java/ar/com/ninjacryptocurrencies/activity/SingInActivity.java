@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
 import com.google.android.gms.auth.api.Auth;
@@ -28,7 +27,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-import ar.com.ninjacryptocurrencies.MainActivity;
+import ar.com.ninjacryptocurrencies.NinjaCryptocurrenciesActivity;
 import ar.com.ninjacryptocurrencies.R;
 import io.fabric.sdk.android.Fabric;
 
@@ -135,7 +134,7 @@ public class SingInActivity extends AppCompatActivity {
      * Iniciamos la actividad principal
      */
     private void initCryptoCurrenciesActivity(){
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, NinjaCryptocurrenciesActivity.class);
         startActivity(i);
     }
 

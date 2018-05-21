@@ -13,17 +13,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import ar.com.ninjacryptocurrencies.activity.InfoDeveloperActivity;
 import ar.com.ninjacryptocurrencies.activity.SingInActivity;
 import ar.com.ninjacryptocurrencies.fragment.CodeFragment;
-import ar.com.ninjacryptocurrencies.fragment.PortfolioFragment;
+import ar.com.ninjacryptocurrencies.fragment.AdsFragment;
 import ar.com.ninjacryptocurrencies.fragment.TickerListFragment;
 
-public class MainActivity extends AppCompatActivity implements TickerListFragment.OnFragmentInteractionListener {
-    private static final String TAG = "MainActivity";
+/**
+ * Activity principal de la aplicación.
+ */
+public class NinjaCryptocurrenciesActivity extends AppCompatActivity implements TickerListFragment.OnFragmentInteractionListener {
+    private static final String TAG = "NinjaActivity";
     private FirebaseAuth firebaseAuth;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements TickerListFragmen
                     fragment = TickerListFragment.newInstance();
                     break;
                 case R.id.navigation_ads:
-                    fragment = PortfolioFragment.newInstance();
+                    fragment = AdsFragment.newInstance();
                     break;
                 case R.id.navigation_code:
                     fragment = CodeFragment.newInstance();
@@ -103,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements TickerListFragmen
                 .add(R.id.main_container, TickerListFragment.newInstance()).commit();
 
         firebaseAuth = FirebaseAuth.getInstance();
+        MobileAds.initialize(this, getString(R.string.admob_key_test_banner));
     }
 
     public void onFragmentInteraction(Uri uri){

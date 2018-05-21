@@ -1,4 +1,9 @@
 <resources>
+    <string name="admob_key_test_banner">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_key_test_interstitial">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_key_test_insterstitial_video">ca-app-pub-3940256099942544/8691691433</string>
+
+    <string name="admob_key">ca-app-pub-1696571385061754~9867236689</string>
     <!-- URL -->
     <string name="url_info_developer">https://diegoalejandromern.wixsite.com/ninjacryptocurr</string>
     <string name="mailto_info_developer">mailto:diego.alejandro.mernies@bbva.com</string>
