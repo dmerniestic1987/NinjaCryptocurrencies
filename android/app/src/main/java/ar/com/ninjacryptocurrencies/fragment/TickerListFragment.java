@@ -146,7 +146,7 @@ public class TickerListFragment extends Fragment {
         @Override
         protected List<Ticker> doInBackground(Void... voids) {
             Log.d("TickerList", "AsyncTask doInBackground");
-            final String url = "https://api.coinmarketcap.com/v1/ticker/?limit=50";
+            final String url = getString(R.string.url_request_capCoinMarket);
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
             ResponseEntity<Ticker []> responseEntity = restTemplate.getForEntity(url, Ticker[].class);
