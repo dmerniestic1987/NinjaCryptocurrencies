@@ -10,21 +10,11 @@
     android:background="@color/purpleBackground"
     android:orientation="vertical">
 
-
-    <TextView
-        android:id="@+id/titulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ninja Cryptocurrencies"
-        android:textAlignment="center"
-        android:textColor="@color/greenPrimary"
-        android:textSize="30sp" />
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/shuriken" />
+        app:srcCompat="@drawable/ninja_logo" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/signInButton"

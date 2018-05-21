@@ -48,7 +48,7 @@ public class SingInActivity extends AppCompatActivity {
         Fabric.with(this, new Crashlytics());
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(getString(R.string.signIn_login));
+        toolbar.setTitle(getString(R.string.app_name));
         setSupportActionBar(toolbar);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
