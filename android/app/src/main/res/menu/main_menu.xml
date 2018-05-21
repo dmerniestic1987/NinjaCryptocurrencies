@@ -3,11 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity" >
 
-    <item android:id="@+id/action_help"
-        android:title="@string/action_help"
-        android:orderInCategory="100"
-        app:showAsAction="never" />
-
     <item android:id="@+id/action_terms_conditions"
         android:title="@string/action_terms_conditions"
         android:orderInCategory="100"
@@ -15,6 +10,11 @@
 
     <item android:id="@+id/action_developer_info"
         android:title="@string/action_developer_info"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/signOut"
+        android:title="@string/sign_out_option"
         android:orderInCategory="100"
         app:showAsAction="never" />
 </menu>

@@ -13,13 +13,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import ar.com.ninjacryptocurrencies.activity.InfoDeveloperActivity;
+import ar.com.ninjacryptocurrencies.activity.SingInActivity;
 import ar.com.ninjacryptocurrencies.fragment.CodeFragment;
 import ar.com.ninjacryptocurrencies.fragment.PortfolioFragment;
 import ar.com.ninjacryptocurrencies.fragment.TickerListFragment;
 
 public class MainActivity extends AppCompatActivity implements TickerListFragment.OnFragmentInteractionListener {
     private static final String TAG = "MainActivity";
+    private FirebaseAuth firebaseAuth;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -67,17 +72,17 @@ public class MainActivity extends AppCompatActivity implements TickerListFragmen
             return true;
         }
 
-        if (id == R.id.action_help) {
-            Log.i(TAG, "Ayuda");
-            Toast toast = Toast.makeText(context, R.string.action_help, duration);
-            toast.show();
-            return true;
-        }
-
         if (id == R.id.action_terms_conditions) {
             Log.i(TAG, "Términos y Condiciones");
             Toast toast = Toast.makeText(context, R.string.action_terms_conditions, duration);
             toast.show();
+            return true;
+        }
+
+        if (id == R.id.signOut) {
+            Log.i(TAG, getString(R.string.sign_out_option));
+            firebaseAuth.signOut();
+            goToSignInActivity();
             return true;
         }
 
@@ -94,9 +99,25 @@ public class MainActivity extends AppCompatActivity implements TickerListFragmen
 
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.main_container, TickerListFragment.newInstance()).commit();
+
+        firebaseAuth = FirebaseAuth.getInstance();
     }
 
     public void onFragmentInteraction(Uri uri){
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if (user == null){
+            goToSignInActivity();
+        }
+    }
+
+    private void goToSignInActivity() {
+        Intent i = new Intent(this, SingInActivity.class);
+        startActivity(i);
     }
 }

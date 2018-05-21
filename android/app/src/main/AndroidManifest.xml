@@ -3,7 +3,7 @@
     package="ar.com.ninjacryptocurrencies">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <meta-data android:name="firebase_crashlytics_collection_enabled" android:value="false" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,18 +12,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="ar.com.ninjacryptocurrencies.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name">
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".activity.InfoDeveloperActivity"
+            android:label="@string/title_activity_info_developer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.SingInActivity"
+            android:label="@string/title_activity_sing_in"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="ar.com.ninjacryptocurrencies.activity.InfoDeveloperActivity"
-            android:label="@string/title_activity_info_developer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
