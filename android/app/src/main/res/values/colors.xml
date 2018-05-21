@@ -9,4 +9,5 @@
     <color name="colorLightGrayTextColor">#f1efed</color>
     <color name="purpleText">#9c29a1</color>
     <color name="red_warning">#fc5569</color>
+    <color name="purpleBackground">#550080</color>
 </resources>

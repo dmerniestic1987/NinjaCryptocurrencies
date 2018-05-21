@@ -7,7 +7,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="ar.com.ninjacryptocurrencies.activity.SingInActivity"
     tools:showIn="@layout/activity_sing_in"
-    android:background="@color/colorDarkGrayBackground"
+    android:background="@color/purpleBackground"
     android:orientation="vertical">
 
 
