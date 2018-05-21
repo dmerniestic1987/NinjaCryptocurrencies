@@ -29,7 +29,7 @@
             android:id="@+id/imagePurpleNinja"
             android:layout_width="match_parent"
             android:layout_height="222dp"
-            android:layout_margin="12dp"
+            android:layout_margin="6dp"
             android:src="@drawable/ninja_purpura_vs_ocre" />
 
 
@@ -39,16 +39,16 @@
             android:layout_height="wrap_content"
             android:text="@string/ninja_purpura_descripcion"
             android:textColor="@color/greenPrimary"
-            android:layout_margin="6dp"/>
+            android:layout_margin="2dp"/>
 
         <Button
             android:id="@+id/buttonPurpleNinja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:layout_margin="6dp"
-            android:text="Button"
-            android:background="@color/purpleText"/>
+            android:background="@color/purpleText"
+            android:text="@string/view_purple_ninja_youtube"
+            android:textColor="@color/greenPrimary" />
 
         <com.google.android.gms.ads.AdView
             xmlns:ads="http://schemas.android.com/apk/res-auto"
