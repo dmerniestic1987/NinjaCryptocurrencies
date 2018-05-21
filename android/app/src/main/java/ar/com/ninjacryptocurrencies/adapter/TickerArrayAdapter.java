@@ -36,7 +36,6 @@ public class TickerArrayAdapter extends ArrayAdapter<Ticker> {
 
     @Override
     public void add(@Nullable Ticker object) {
-        super.add(object);
         this.listTicker.add(object);
     }
 
@@ -54,7 +53,13 @@ public class TickerArrayAdapter extends ArrayAdapter<Ticker> {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View itemView = inflater.inflate(R.layout.item_ticker_list, parent, false);
+        View itemView;
+        if (convertView == null){
+            itemView = inflater.inflate(R.layout.item_ticker_list, parent, false);
+        }
+        else{
+            itemView = convertView;
+        }
 
         itemView.setId(bean.getId().hashCode());
         TextView titleTicker = itemView.findViewById(R.id.titleTicker);
@@ -97,8 +102,6 @@ public class TickerArrayAdapter extends ArrayAdapter<Ticker> {
 
         TextView textCirculating = itemView.findViewById(R.id.textCirculating);
         textCirculating.setText(bean.getAvailableSupply() + " (" + bean.getSymbol() + ")");
-
-
         return itemView;
     }
 

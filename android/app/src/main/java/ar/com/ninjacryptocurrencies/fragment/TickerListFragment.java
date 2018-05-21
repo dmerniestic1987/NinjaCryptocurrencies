@@ -17,12 +17,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import ar.com.ninjacryptocurrencies.R;
 import ar.com.ninjacryptocurrencies.adapter.TickerArrayAdapter;
 import ar.com.ninjacryptocurrencies.bean.Ticker;
-import ar.com.ninjacryptocurrencies.manager.ListTickerManager;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,14 +61,13 @@ public class TickerListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "onCreate - clean ListTickerManager");
         super.onCreate(savedInstanceState);
-        ListTickerManager.getInstance().clearTickers();
     }
 
     public void onStart(){
         super.onStart();
         this.listViewTicker = this.getActivity().findViewById(R.id.listViewTicker);
 
-        tickerArrayAdapter = new TickerArrayAdapter(getContext(), ListTickerManager.getInstance().getListTicker());
+        tickerArrayAdapter = new TickerArrayAdapter(getContext(), new ArrayList<Ticker>());
         listViewTicker.setAdapter(tickerArrayAdapter);
 
         HttpCallTickerListAsyncTask asyncTas = new HttpCallTickerListAsyncTask();
@@ -152,10 +152,7 @@ public class TickerListFragment extends Fragment {
             ResponseEntity<Ticker []> responseEntity = restTemplate.getForEntity(url, Ticker[].class);
 
             Ticker [] arrayTicker = responseEntity.getBody();
-            ListTickerManager listTickerManager = ListTickerManager.getInstance();
-            listTickerManager.addOrUpdateAll(arrayTicker);
-
-            return listTickerManager.getListTicker();
+            return Arrays.asList(arrayTicker);
         }
 
         @Override
