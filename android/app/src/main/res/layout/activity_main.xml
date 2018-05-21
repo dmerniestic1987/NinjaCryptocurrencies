@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="ar.com.ninjacryptocurrencies.NinjaCryptocurrenciesActivity"
-    android:background="@color/colorDarkGrayBackground">
+    android:background="@color/colorDarkGrayBackground"
+    >
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"

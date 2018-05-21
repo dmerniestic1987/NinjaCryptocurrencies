@@ -1,23 +1,66 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorDarkGrayBackground"
-    tools:context="ar.com.ninjacryptocurrencies.fragment.AdsFragment"
-    android:orientation="vertical">
+    android:fillViewport="true"
+    android:scrollbars="vertical">
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView"
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/admob_key_test_banner">
-    </com.google.android.gms.ads.AdView>
+        android:layout_height="match_parent"
+        android:background="@color/colorDarkGrayBackground"
+        tools:context="ar.com.ninjacryptocurrencies.fragment.AdsFragment"
+        android:orientation="vertical">
 
 
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/admob_key_test_banner">
+        </com.google.android.gms.ads.AdView>
+
+        <ImageView
+            android:id="@+id/imagePurpleNinja"
+            android:layout_width="match_parent"
+            android:layout_height="222dp"
+            android:layout_margin="12dp"
+            android:src="@drawable/ninja_purpura_vs_ocre" />
 
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ninja_purpura_descripcion"
+            android:textColor="@color/greenPrimary"
+            android:layout_margin="6dp"/>
+
+        <Button
+            android:id="@+id/buttonPurpleNinja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="6dp"
+            android:text="Button"
+            android:background="@color/purpleText"/>
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/admob_key_test_banner">
+        </com.google.android.gms.ads.AdView>
+
+    </LinearLayout>
+
+</ScrollView>

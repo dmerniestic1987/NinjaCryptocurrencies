@@ -42,4 +42,7 @@
     <string name="title_activity_sing_in">SingInActivity</string>
 
     <string name="sign_out_option">Salir</string>
+
+    <string name="url_ninja_purpura_youtube">https://www.youtube.com/watch?v=EehdIcypknY</string>
+    <string name="ninja_purpura_descripcion">El Ninja Púrpura... un crack!!! Click en los ninjas o el botón para ver una de las mejores escenas del cine bélico</string>
 </resources>

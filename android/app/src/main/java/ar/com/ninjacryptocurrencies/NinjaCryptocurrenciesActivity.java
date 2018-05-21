@@ -13,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -106,7 +105,6 @@ public class NinjaCryptocurrenciesActivity extends AppCompatActivity implements 
                 .add(R.id.main_container, TickerListFragment.newInstance()).commit();
 
         firebaseAuth = FirebaseAuth.getInstance();
-        MobileAds.initialize(this, getString(R.string.admob_key_test_banner));
     }
 
     public void onFragmentInteraction(Uri uri){
