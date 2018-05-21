@@ -67,8 +67,10 @@ public class MainActivity extends AppCompatActivity implements TickerListFragmen
 
         if (id == R.id.action_developer_info) {
             Log.i(TAG, "developer info");
-            Intent i = new Intent(this, InfoDeveloperActivity.class);
-            startActivity(i);
+
+            String url = getString(R.string.url_info_developer);
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(browserIntent);
             return true;
         }
 

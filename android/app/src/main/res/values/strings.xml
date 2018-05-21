@@ -1,6 +1,6 @@
 <resources>
     <!-- URL -->
-    <string name="url_info_developer">https://developer.android.com/reference/android/webkit/WebView</string>
+    <string name="url_info_developer">https://diegoalejandromern.wixsite.com/ninjacryptocurr</string>
     <string name="mailto_info_developer">mailto:diego.alejandro.mernies@bbva.com</string>
 
     <string name="app_name">Cryto Currencies</string>
