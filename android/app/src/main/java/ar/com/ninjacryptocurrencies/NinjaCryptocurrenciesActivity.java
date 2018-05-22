@@ -34,7 +34,7 @@ public class NinjaCryptocurrenciesActivity extends AppCompatActivity implements 
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment fragment = null;
+            Fragment fragment = TickerListFragment.newInstance();;
             switch (item.getItemId()) {
                 case R.id.navigation_criptocurrencies:
                     fragment = TickerListFragment.newInstance();
@@ -46,7 +46,6 @@ public class NinjaCryptocurrenciesActivity extends AppCompatActivity implements 
                     fragment = CodeFragment.newInstance();
                     break;
                 default:
-                    fragment = TickerListFragment.newInstance();
                     break;
             }
             getSupportFragmentManager().beginTransaction()
