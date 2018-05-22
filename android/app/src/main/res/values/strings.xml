@@ -50,4 +50,5 @@
     <string name="dialog_ninja">Esto es un diálogo con formatos Ninja</string>
     <string name="aceptar_dialog_ninja">Aceptar</string>
     <string name="cancelar_dialog_ninja">Cancelar</string>
+    <string name="title_activity_term_condition">TermConditionActivity</string>
 </resources>

@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import ar.com.ninjacryptocurrencies.activity.NinjaTermConditionActivity;
 import ar.com.ninjacryptocurrencies.activity.SingInActivity;
 import ar.com.ninjacryptocurrencies.fragment.CodeFragment;
 import ar.com.ninjacryptocurrencies.fragment.AdsFragment;
@@ -78,8 +79,8 @@ public class NinjaCryptocurrenciesActivity extends AppCompatActivity implements 
 
         if (id == R.id.action_terms_conditions) {
             Log.i(TAG, "Términos y Condiciones");
-            Toast toast = Toast.makeText(context, R.string.action_terms_conditions, duration);
-            toast.show();
+            Intent i = new Intent(this, NinjaTermConditionActivity.class);
+            startActivity(i);
             return true;
         }
 
@@ -97,6 +98,7 @@ public class NinjaCryptocurrenciesActivity extends AppCompatActivity implements 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle(getString(R.string.app_name));
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
