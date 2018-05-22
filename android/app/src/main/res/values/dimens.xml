@@ -16,5 +16,6 @@
     <!-- CODE FRAGMET -->
     <dimen name="margin_code_text_box">10dp</dimen>
     <dimen name="text_size_code_text_box">12dp</dimen>
+    <dimen name="padding_detail_items">7dp</dimen>
 
 </resources>

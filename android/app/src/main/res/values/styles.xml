@@ -29,4 +29,11 @@
         <item name="android:textSize">@dimen/text_size_code_text_box</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="detail_item">
+        <item name="android:textColor">@color/purpleBackground</item>
+        <item name="android:fontFamily">casual</item>
+        <item name="android:textSize">@dimen/text_size_code_text_box</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

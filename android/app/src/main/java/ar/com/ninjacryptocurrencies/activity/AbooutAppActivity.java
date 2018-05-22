@@ -32,7 +32,7 @@ public class AbooutAppActivity extends AppCompatActivity implements View.OnClick
         txt_app_version.setText(getString(R.string.display_app_version) + " " + String.valueOf(BuildConfig.VERSION_CODE));
         txt_version_name = this.findViewById(R.id.txt_version_name);
         txt_version_name.setText(getString(R.string.display_version_name) + " " + String.valueOf(BuildConfig.VERSION_NAME));
-        
+
     }
 
     @Override
