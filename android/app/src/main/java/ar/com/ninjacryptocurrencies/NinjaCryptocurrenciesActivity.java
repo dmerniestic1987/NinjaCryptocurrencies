@@ -1,6 +1,5 @@
 package ar.com.ninjacryptocurrencies;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,12 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import ar.com.ninjacryptocurrencies.activity.NinjaTermConditionActivity;
+import ar.com.ninjacryptocurrencies.activity.AbooutAppActivity;
 import ar.com.ninjacryptocurrencies.activity.SingInActivity;
 import ar.com.ninjacryptocurrencies.fragment.CodeFragment;
 import ar.com.ninjacryptocurrencies.fragment.AdsFragment;
@@ -77,9 +75,9 @@ public class NinjaCryptocurrenciesActivity extends AppCompatActivity implements 
             return true;
         }
 
-        if (id == R.id.action_terms_conditions) {
-            Log.i(TAG, "Términos y Condiciones");
-            Intent i = new Intent(this, NinjaTermConditionActivity.class);
+        if (id == R.id.action_about_app) {
+            Log.i(TAG, "About App");
+            Intent i = new Intent(this, AbooutAppActivity.class);
             startActivity(i);
             return true;
         }

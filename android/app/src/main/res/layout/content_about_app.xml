@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activity.NinjaTermConditionActivity"
-    tools:showIn="@layout/activity_ninja_term_condition"
+    tools:context=".activity.AbooutAppActivity"
+    tools:showIn="@layout/activity_about_app"
     android:background="@color/purpleBackground">
 
 
@@ -19,12 +19,12 @@
 
         <TextView
             android:id="@+id/txt_dialog_ninja"
+            style="@style/code_text_lines"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="@dimen/margin_ninja_dialog_text_box"
             android:text="@string/dialog_ninja"
-            android:textColor="@color/colorLightGrayTextColor"
             android:background="@color/colorDarkGrayBackground"
             android:padding="@dimen/paddding_ninja_dialog_text_box"
             android:textSize="@dimen/text_size_ninja_dialog_text_box" />
@@ -51,17 +51,6 @@
                 android:background="@color/greenPrimary"
                 android:clickable="true"
                 android:text="@string/aceptar_dialog_ninja"
-                android:textColor="@color/purpleBackground"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btn_cancelar_ninja"
-                android:layout_width="@dimen/button_ninja_width"
-                android:layout_height="@dimen/button_ninja_height"
-                android:layout_marginLeft="@dimen/margin_ninja_dialog_text_box"
-                android:background="@color/greenPrimary"
-                android:clickable="true"
-                android:text="@string/cancelar_dialog_ninja"
                 android:textColor="@color/purpleBackground"
                 android:textStyle="bold" />
         </LinearLayout>

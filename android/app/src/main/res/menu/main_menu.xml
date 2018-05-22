@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".NinjaCryptocurrenciesActivity">
 
-    <item android:id="@+id/action_terms_conditions"
+    <item android:id="@+id/action_about_app"
         android:title="@string/action_terms_conditions"
         android:orderInCategory="100"
         app:showAsAction="never" />

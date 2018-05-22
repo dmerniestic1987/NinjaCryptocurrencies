@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.NinjaTermConditionActivity">
+    tools:context=".activity.AbooutAppActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,6 +21,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_ninja_dialog_activity" />
+    <include layout="@layout/content_about_app" />
 
 </android.support.design.widget.CoordinatorLayout>
