@@ -18,22 +18,43 @@
 
 
         <TextView
+            android:id="@+id/txt_app_version"
+            style="@style/code_text_lines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_ninja_dialog_text_box"
+            android:text="@string/display_app_version"
+            android:layout_marginBottom="0dp"
+            android:background="@color/colorDarkGrayBackground"
+            android:padding="@dimen/paddding_ninja_dialog_text_box"
+            android:textSize="@dimen/text_size_ninja_dialog_text_box" />
+
+        <TextView
+            android:id="@+id/txt_version_name"
+            style="@style/code_text_lines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_ninja_dialog_text_box"
+            android:layout_marginBottom="0dp"
+            android:text="@string/display_version_name"
+            android:background="@color/colorDarkGrayBackground"
+            android:padding="@dimen/paddding_ninja_dialog_text_box"
+            android:textSize="@dimen/text_size_ninja_dialog_text_box" />
+
+        <TextView
             android:id="@+id/txt_dialog_ninja"
             style="@style/code_text_lines"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="@dimen/margin_ninja_dialog_text_box"
+            android:layout_marginBottom="0dp"
             android:text="@string/dialog_ninja"
             android:background="@color/colorDarkGrayBackground"
             android:padding="@dimen/paddding_ninja_dialog_text_box"
             android:textSize="@dimen/text_size_ninja_dialog_text_box" />
-
-        <ImageView
-            android:id="@+id/img_ninja_dialog"
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            app:srcCompat="@drawable/ninja_logo" />
 
         <LinearLayout
             android:layout_width="wrap_content"

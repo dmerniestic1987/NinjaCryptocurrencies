@@ -60,5 +60,6 @@
     <string name="url_github_ninja_cryptocurrencies">https://github.com/diegomernies/NinjaCryptocurrencies</string>
     <string name="git_clone_https_cryptocurrencies">git clone https://github.com/diegomernies/NinjaCryptocurrencies.git</string>
     <string name="git_clone_ssh_cryptocurrencies">git clone git@github.com:diegomernies/NinjaCryptocurrencies.git</string>
-
+    <string name="display_app_version">Versión de App: </string>
+    <string name="display_version_name">Nombre de versión: </string>
 </resources>
