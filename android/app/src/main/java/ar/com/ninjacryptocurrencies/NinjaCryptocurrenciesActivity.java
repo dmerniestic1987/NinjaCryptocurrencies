@@ -64,10 +64,6 @@ public class NinjaCryptocurrenciesActivity extends AppCompatActivity implements 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
-        Context context = getApplicationContext();
-        int duration = Toast.LENGTH_SHORT;
-
         if (id == R.id.action_developer_info) {
             Log.i(TAG, "developer info");
 
