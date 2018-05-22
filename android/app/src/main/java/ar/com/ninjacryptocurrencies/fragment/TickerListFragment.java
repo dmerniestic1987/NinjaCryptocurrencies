@@ -85,7 +85,6 @@ public class TickerListFragment extends Fragment {
 
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.container, detailFragment);
-                transaction.addToBackStack(null);
                 transaction.commit();
 
             }

@@ -48,6 +48,11 @@ public class NinjaCryptocurrenciesActivity extends AppCompatActivity implements 
                 default:
                     break;
             }
+
+            for (Fragment frag : getSupportFragmentManager().getFragments()){
+                getSupportFragmentManager().beginTransaction().remove(frag).commit();
+            }
+
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.main_container, fragment).commit();
             return true;
