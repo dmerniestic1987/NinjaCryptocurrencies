@@ -11,7 +11,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/img_ninja_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ninja_logo" />

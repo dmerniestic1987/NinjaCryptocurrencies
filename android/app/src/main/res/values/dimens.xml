@@ -4,4 +4,16 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <!-- NINJA DIALOG -->
+    <dimen name="text_box_ninja_height">80dp</dimen>
+    <dimen name="margin_ninja_dialog_text_box">20dp</dimen>
+    <dimen name="button_ninja_width">140dp</dimen>
+    <dimen name="button_ninja_height">35dp</dimen>
+    <dimen name="paddding_ninja_dialog_text_box">10dp</dimen>
+    <dimen name="text_size_ninja_dialog_text_box">13dp</dimen>
+
+    <!-- CODE FRAGMET -->
+    <dimen name="margin_code_text_box">10dp</dimen>
+    <dimen name="text_size_code_text_box">12dp</dimen>
 </resources>

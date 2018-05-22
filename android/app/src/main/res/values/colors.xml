@@ -11,4 +11,5 @@
     <color name="red_warning">#fc5569</color>
     <color name="purpleBackground">#550080</color>
     <color name="dark">#000</color>
+    <color name="url_link">#FF0D61FD</color>
 </resources>

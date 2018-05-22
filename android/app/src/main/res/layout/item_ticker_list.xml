@@ -19,7 +19,8 @@
     <TableLayout
         android:layout_width="0dp"
         android:layout_weight="5"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:layout_height="wrap_content">
 
         <TableRow android:id="@+id/rowTitle"

@@ -1,14 +1,97 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorDarkGrayBackground"
-    tools:context="ar.com.ninjacryptocurrencies.fragment.CodeFragment">
+    android:background="@color/purpleBackground"
+    tools:context="ar.com.ninjacryptocurrencies.fragment.CodeFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/title_code" />
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:layout_marginTop="15dp">
 
-</FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_code_text_box"
+            android:background="@color/colorDarkGrayBackground">
+
+            <TextView android:id="@+id/code_text_linea_1"
+                style="@style/code_text_lines"
+                android:text="@string/code_text_linea_1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/margin_code_text_box"
+                android:background="@color/purpleBackground">
+
+                <TextView
+                    android:id="@+id/code_text_link_1"
+                    style="@style/code_text_lines"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/url_github_ninja_cryptocurrencies"
+                    android:textAlignment="center"
+                    android:textColor="@color/red_warning"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/code_git_clone_https"
+                    style="@style/code_text_lines"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/git_clone_https_cryptocurrencies"
+                    android:textAlignment="center"
+                    android:textColor="@color/url_link"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/code_git_clone_ssh"
+                    style="@style/code_text_lines"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/git_clone_ssh_cryptocurrencies"
+                    android:textAlignment="center"
+                    android:textColor="@color/url_link"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <TextView android:id="@+id/code_text_linea_2"
+                style="@style/code_text_lines"
+                android:text="@string/code_text_linea_2"
+                android:layout_marginTop="25dp"/>
+
+            <TextView android:id="@+id/code_text_linea_3"
+                style="@style/code_text_lines"
+                android:text="@string/code_text_linea_3" />
+
+            <TextView android:id="@+id/code_text_linea_4"
+                style="@style/code_text_lines"
+                android:text="@string/code_text_linea_4" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageGitHub"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/github"
+        android:layout_margin="@dimen/margin_code_text_box"
+        android:background="@color/greenPrimary"
+        android:padding="@dimen/margin_code_text_box" />
+
+
+</LinearLayout>

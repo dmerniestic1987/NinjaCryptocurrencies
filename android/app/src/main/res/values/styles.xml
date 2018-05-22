@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/greenPrimary</item>
         <item name="colorPrimaryDark">@color/greenPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorTertiary">@color/purpleBackground</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -17,4 +18,16 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="code_text_lines">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/greenPrimary</item>
+        <item name="android:layout_marginLeft">@dimen/margin_code_text_box</item>
+        <item name="android:layout_marginRight">@dimen/margin_code_text_box</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:fontFamily">casual</item>
+        <item name="android:textSize">@dimen/text_size_code_text_box</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

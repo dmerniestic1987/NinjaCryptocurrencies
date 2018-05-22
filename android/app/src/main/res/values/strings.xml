@@ -36,7 +36,6 @@
     <string name="error_login">Hubo un error</string>
     <string name="signIn_login">Iniciar Sesión</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_info_developer">InfoDeveloperActivity</string>
     <string name="title_activity_sing_in">SingInActivity</string>
@@ -51,4 +50,14 @@
     <string name="aceptar_dialog_ninja">Aceptar</string>
     <string name="cancelar_dialog_ninja">Cancelar</string>
     <string name="title_activity_term_condition">TermConditionActivity</string>
+
+    <!-- Code Fragment-->
+    <string name="code_text_linea_1">El código fuente de esta aplicación es libre y se puede descargar de GitHub. Abajo están los links!</string>
+    <string name="code_text_linea_2">El proyecto fue hecho con AndroidStudio</string>
+    <string name="code_text_linea_3">Si querés compilarlo y ejecutarlo con tu IDE hay que darse de alta en Firebase con el package que figura en el AndroidManifestm.xml. Luego descargar el archivo goole-services.json y pisar el del proyecto.</string>
+    <string name="code_text_linea_4">Para más detalle ingresá a la páginas del poryecto... click en el gatito</string>
+    <string name="url_github_ninja_cryptocurrencies">https://github.com/diegomernies/NinjaCryptocurrencies</string>
+    <string name="git_clone_https_cryptocurrencies">git clone https://github.com/diegomernies/NinjaCryptocurrencies.git</string>
+    <string name="git_clone_ssh_cryptocurrencies">git clone git@github.com:diegomernies/NinjaCryptocurrencies.git</string>
+
 </resources>

@@ -1,23 +1,24 @@
 package ar.com.ninjacryptocurrencies.fragment;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import ar.com.ninjacryptocurrencies.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link CodeFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link CodeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class CodeFragment extends Fragment {
+public class CodeFragment extends Fragment implements View.OnClickListener{
+    private TextView code_text_link_1;
+    private TextView code_git_clone_https;
+    private TextView code_git_clone_ssh;
+    private ImageView imageGitHub;
+
     public static CodeFragment newInstance() {
         CodeFragment fragment = new CodeFragment();
         Bundle args = new Bundle();
@@ -45,5 +46,33 @@ public class CodeFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        code_text_link_1 = this.getActivity().findViewById(R.id.code_text_link_1);
+        code_text_link_1.setClickable(true);
+        code_text_link_1.setOnClickListener(this);
+
+        code_git_clone_https = this.getActivity().findViewById(R.id.code_git_clone_https);
+        code_git_clone_https.setClickable(true);
+        code_git_clone_https.setOnClickListener(this);
+
+
+        code_git_clone_ssh = this.getActivity().findViewById(R.id.code_git_clone_ssh);
+        code_git_clone_ssh.setClickable(true);
+        code_git_clone_ssh.setOnClickListener(this);
+
+        imageGitHub = this.getActivity().findViewById(R.id.imageGitHub);
+        imageGitHub.setClickable(true);
+        imageGitHub.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        String url = getString(R.string.url_github_ninja_cryptocurrencies);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(browserIntent);
     }
 }
