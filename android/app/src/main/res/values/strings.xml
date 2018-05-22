@@ -47,4 +47,7 @@
     <string name="ninja_purpura_descripcion">El Ninja Púrpura... un crack!!! Click en los ninjas o el botón para ver una de las mejores escenas del cine bélico.... ¿Qué tiene que ver con las criptomonedas?</string>
     <string name="view_purple_ninja_youtube">Ver Ninja Púrpura</string>
     <string name="url_request_capCoinMarket">https://api.coinmarketcap.com/v1/ticker/?limit=100</string>
+    <string name="dialog_ninja">Esto es un diálogo con formatos Ninja</string>
+    <string name="aceptar_dialog_ninja">Aceptar</string>
+    <string name="cancelar_dialog_ninja">Cancelar</string>
 </resources>
