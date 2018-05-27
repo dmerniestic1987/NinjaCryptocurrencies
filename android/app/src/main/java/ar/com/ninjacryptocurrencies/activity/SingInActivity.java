@@ -21,13 +21,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-import ar.com.ninjacryptocurrencies.NinjaCryptocurrenciesActivity;
 import ar.com.ninjacryptocurrencies.R;
 import io.fabric.sdk.android.Fabric;
 
@@ -37,8 +37,10 @@ import io.fabric.sdk.android.Fabric;
 public class SingInActivity extends AppCompatActivity {
     private static final String TAG = "SingInActivity";
     private static final int RC_SIGN_IN = 9001;
+
     private GoogleSignInClient googleSignInCliente;
     private FirebaseAuth firebaseAuth;
+    private FirebaseAnalytics firebaseAnalytics;
     private SignInButton singInButton;
 
     @Override
@@ -58,6 +60,7 @@ public class SingInActivity extends AppCompatActivity {
 
         googleSignInCliente = GoogleSignIn.getClient(this, gso);
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
         singInButton = this.findViewById(R.id.signInButton);
 
         singInButton.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +92,6 @@ public class SingInActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        //VERIFICAMOS QUE CORRESPONDA AL SING IN
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
 
@@ -117,14 +119,14 @@ public class SingInActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-
-                        Crashlytics.setString("last_UI_action", "sing_in_google_ok");
                         FirebaseUser user = firebaseAuth.getCurrentUser();
-
+                        firebaseAnalytics.setUserId(user.getUid());
+                        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SIGN_UP, null);
                         initCryptoCurrenciesActivity();
                     
                     } else {
                         showErrorDialog(getString(R.string.authentication_failed));
+                        firebaseAnalytics.logEvent("sing_up_failed", null);
                     }
                 }
             });
@@ -140,6 +142,7 @@ public class SingInActivity extends AppCompatActivity {
 
     /**
      * Muestra un Dialogo para informar que hubo error.
+     * @param msg
      */
     private void showErrorDialog(String msg) {
         AlertDialog.Builder builder;

@@ -8,13 +8,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import ar.com.ninjacryptocurrencies.R;
+import ar.com.ninjacryptocurrencies.analytics.CryptoCurrenciesAnalytics;
 import ar.com.ninjacryptocurrencies.bean.Ticker;
 
 
 public class TickerDetailFragment extends Fragment {
     private Ticker ticker;
     private static String TAG = "TickerDetailFragment";
+    private FirebaseAnalytics firebaseAnalytics;
 
     public TickerDetailFragment() {
         super();
@@ -34,6 +38,14 @@ public class TickerDetailFragment extends Fragment {
         Log.d(TAG, "onCreate - Saco Ticker de Argumentos");
         super.onCreate(savedInstanceState);
         this.ticker = (Ticker) this.getArguments().getSerializable("ticker");
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, CryptoCurrenciesAnalytics.CRYPTOCURRENCIES_CATEGORY);
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, this.ticker.getId());
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, this.ticker.getName());
+
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.VIEW_ITEM, bundle);
 
     }
 

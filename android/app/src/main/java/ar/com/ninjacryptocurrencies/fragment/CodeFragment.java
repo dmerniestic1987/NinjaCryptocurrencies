@@ -11,9 +11,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import ar.com.ninjacryptocurrencies.R;
 
 public class CodeFragment extends Fragment implements View.OnClickListener{
+    private FirebaseAnalytics firebaseAnalytics;
+
     private TextView code_text_link_1;
     private TextView code_git_clone_https;
     private TextView code_git_clone_ssh;
@@ -41,6 +45,8 @@ public class CodeFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        firebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
+        firebaseAnalytics.logEvent("code", null);
     }
 
     @Override

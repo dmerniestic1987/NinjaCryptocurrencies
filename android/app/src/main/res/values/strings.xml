@@ -6,7 +6,7 @@
     <string name="admob_key">ca-app-pub-1696571385061754~9867236689</string>
     <!-- URL -->
     <string name="url_info_developer">https://diegoalejandromern.wixsite.com/ninjacryptocurr</string>
-    <string name="mailto_info_developer">mailto:diego.alejandro.mernies@bbva.com</string>
+    <string name="mailto_info_developer">mailto:ninjacryptocurrenciesexample@gmail.com</string>
 
     <string name="app_name">Crypto Currencies</string>
     <string name="title_criptocurrencies">Criptomonedas</string>
@@ -20,10 +20,10 @@
     <string name="ticker_detail_name">Nombre</string>
     <string name="ticker_detail_symbol">Símbolo</string>
     <string name="ticker_detail_rank">Ranking</string>
-    <string name="ticker_detail_priceUsd">Precio en USD</string>
+    <string name="ticker_detail_priceUsd">Precio en US$</string>
     <string name="ticker_detail_priceBtc">Precio en BTC</string>
-    <string name="ticker_detail_volume24hs">Volumne (24 Hs)</string>
-    <string name="ticker_detail_marketCapUsd">Cap. Mercado USD</string>
+    <string name="ticker_detail_volume24hs">Volumen (24 Hs)</string>
+    <string name="ticker_detail_marketCapUsd">Cap. Mercado US$</string>
     <string name="ticker_detail_totalSupply">Total en Circulación</string>
     <string name="ticker_detail_maxSupply">Oferta Max: </string>
     <string name="error_ouch">Ouch!!! Hubo un error</string>
@@ -43,10 +43,10 @@
     <string name="sign_out_option">Salir</string>
 
     <string name="url_ninja_purpura_youtube">https://www.youtube.com/watch?v=EehdIcypknY</string>
-    <string name="ninja_purpura_descripcion">El Ninja Púrpura... un crack!!! Click en los ninjas o el botón para ver una de las mejores escenas del cine bélico.... ¿Qué tiene que ver con las criptomonedas?</string>
+    <string name="ninja_purpura_descripcion">El Ninja Púrpura... un crack!!! Click en los ninjas o el botón para ver una de las mejores escenas del cine bélico coreano. Su título original es "Proyecto: Ninjas del Infierno"... ¿Qué tiene que ver con las criptomonedas?</string>
     <string name="view_purple_ninja_youtube">Ver Ninja Púrpura</string>
     <string name="url_request_capCoinMarket">https://api.coinmarketcap.com/v1/ticker/?limit=100</string>
-    <string name="dialog_ninja">Ninja Cryptocurrencies es una aplicación de juguete escritra en Android, desarrollada específicamente para una charla de tecnologías libres y gratuitas. Podés modificar y hacer lo que quieras con la aplicación.
+    <string name="dialog_ninja">Ninja Cryptocurrencies es una aplicación de juguete escritra en Android, desarrollada específicamente para una charla de tecnologías libres y/o gratuitas. Podés modificar y hacer lo que quieras con la aplicación. El video del Ninja Púrpura es un personaje de la película "Proyecto: Ninjas del Infierno"
     </string>
     <string name="aceptar_dialog_ninja">Aceptar</string>
     <string name="cancelar_dialog_ninja">Cancelar</string>
@@ -54,9 +54,9 @@
 
     <!-- Code Fragment-->
     <string name="code_text_linea_1">El código fuente de esta aplicación es libre y se puede descargar de GitHub. Abajo están los links!</string>
-    <string name="code_text_linea_2">El proyecto fue hecho con AndroidStudio</string>
-    <string name="code_text_linea_3">Si querés compilarlo y ejecutarlo con tu IDE hay que darse de alta en Firebase con el package que figura en el AndroidManifestm.xml. Luego descargar el archivo goole-services.json y pisar el del proyecto.</string>
-    <string name="code_text_linea_4">Para más detalle ingresá a la páginas del poryecto... click en el gatito</string>
+    <string name="code_text_linea_2">El proyecto fue hecho con AndroidStudio, Google Firebase, Google Docs, GitHub</string>
+    <string name="code_text_linea_3">Si querés compilarlo y ejecutarlo con tu IDE favorito, hay que importar el proyecto, darse de alta en Google Firebase con el package que figura en el AndroidManifest.xml. Luego descargar el archivo google-services.json y ponerlo en la carpeta app.</string>
+    <string name="code_text_linea_4">Para más detalle ingresá a la páginas del proyecto... click en el gatito de GitHub</string>
     <string name="url_github_ninja_cryptocurrencies">https://github.com/diegomernies/NinjaCryptocurrencies</string>
     <string name="git_clone_https_cryptocurrencies">git clone https://github.com/diegomernies/NinjaCryptocurrencies.git</string>
     <string name="git_clone_ssh_cryptocurrencies">git clone git@github.com:diegomernies/NinjaCryptocurrencies.git</string>

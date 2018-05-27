@@ -1,4 +1,4 @@
-package ar.com.ninjacryptocurrencies;
+package ar.com.ninjacryptocurrencies.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import ar.com.ninjacryptocurrencies.R;
 import ar.com.ninjacryptocurrencies.activity.AbooutAppActivity;
 import ar.com.ninjacryptocurrencies.activity.SingInActivity;
 import ar.com.ninjacryptocurrencies.fragment.CodeFragment;

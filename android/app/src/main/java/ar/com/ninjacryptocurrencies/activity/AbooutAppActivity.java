@@ -9,14 +9,21 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import ar.com.ninjacryptocurrencies.BuildConfig;
 import ar.com.ninjacryptocurrencies.R;
 
+/**
+ * Muestra la información de la aplicación.
+ */
 public class AbooutAppActivity extends AppCompatActivity implements View.OnClickListener{
     private Button aceptar;
     private static String TAG = "AbooutApp";
     private TextView txt_app_version;
     private TextView txt_version_name;
+
+    private FirebaseAnalytics firebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,8 @@ public class AbooutAppActivity extends AppCompatActivity implements View.OnClick
         txt_version_name = this.findViewById(R.id.txt_version_name);
         txt_version_name.setText(getString(R.string.display_version_name) + " " + String.valueOf(BuildConfig.VERSION_NAME));
 
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        logEventAbout();
     }
 
     @Override
@@ -42,6 +51,15 @@ public class AbooutAppActivity extends AppCompatActivity implements View.OnClick
             Log.d(TAG, "About OK clicked");
             this.finish();
         }
+    }
 
+    /**
+     * Registra un evento en Firebase
+     */
+    public void logEventAbout(){
+        Bundle bundle = new Bundle();
+        bundle.putString("version_code",  String.valueOf(BuildConfig.VERSION_CODE));
+        bundle.putString("version_name",  String.valueOf(BuildConfig.VERSION_NAME));
+        firebaseAnalytics.logEvent("about_app", bundle);
     }
 }

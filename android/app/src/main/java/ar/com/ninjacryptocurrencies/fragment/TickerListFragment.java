@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
@@ -23,6 +25,7 @@ import java.util.List;
 
 import ar.com.ninjacryptocurrencies.R;
 import ar.com.ninjacryptocurrencies.adapter.TickerArrayAdapter;
+import ar.com.ninjacryptocurrencies.analytics.CryptoCurrenciesAnalytics;
 import ar.com.ninjacryptocurrencies.bean.Ticker;
 
 /**
@@ -40,8 +43,10 @@ public class TickerListFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     private TickerArrayAdapter tickerArrayAdapter;
 
+    private FirebaseAnalytics firebaseAnalytics;
+
     public TickerListFragment() {
-        // Required empty public constructor
+        super();
     }
 
     /**
@@ -61,6 +66,11 @@ public class TickerListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "onCreate - clean ListTickerManager");
         super.onCreate(savedInstanceState);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, CryptoCurrenciesAnalytics.CRYPTOCURRENCIES_CATEGORY);
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.VIEW_ITEM_LIST, bundle);
     }
 
     public void onStart(){
@@ -122,17 +132,9 @@ public class TickerListFragment extends Fragment {
     }
 
     /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
+     * Inteface
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 
