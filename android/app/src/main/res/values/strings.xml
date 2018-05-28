@@ -1,7 +1,7 @@
 <resources>
-    <string name="admob_key_test_banner">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="admob_key_test_interstitial">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="admob_key_test_insterstitial_video">ca-app-pub-3940256099942544/8691691433</string>
+    <string name="admob_key_test_banner">ca-app-pub-1696571385061754~9867236689</string>
+    <string name="admob_key_test_interstitial">ca-app-pub-1696571385061754~9867236689</string>
+    <string name="admob_key_test_insterstitial_video">ca-app-pub-1696571385061754~9867236689</string>
 
     <string name="admob_key">ca-app-pub-1696571385061754~9867236689</string>
     <!-- URL -->
@@ -20,10 +20,10 @@
     <string name="ticker_detail_name">Nombre</string>
     <string name="ticker_detail_symbol">Símbolo</string>
     <string name="ticker_detail_rank">Ranking</string>
-    <string name="ticker_detail_priceUsd">Precio en US$</string>
+    <string name="ticker_detail_priceUsd">Precio</string>
     <string name="ticker_detail_priceBtc">Precio en BTC</string>
     <string name="ticker_detail_volume24hs">Volumen (24 Hs)</string>
-    <string name="ticker_detail_marketCapUsd">Cap. Mercado US$</string>
+    <string name="ticker_detail_marketCapUsd">Capitalización de Mercado</string>
     <string name="ticker_detail_totalSupply">Total en Circulación</string>
     <string name="ticker_detail_maxSupply">Oferta Max: </string>
     <string name="error_ouch">Ouch!!! Hubo un error</string>
