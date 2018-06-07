@@ -102,7 +102,8 @@ public class TickerArrayAdapter extends ArrayAdapter<Ticker> {
         TextView text24Hs = itemView.findViewById(R.id.text24hs);
         text24Hs.setText(bean.getPercentChange24h() + " %");
         text24Hs.setTextColor(ContextCompat.getColor(this.getContext(), R.color.greenPrimaryDark));
-        if (bean.getPercentChange24h().startsWith("-")){
+
+        if (bean.getPercentChange24h() != null && bean.getPercentChange24h().startsWith("-")){
             text24Hs.setTextColor(ContextCompat.getColor(this.getContext(), R.color.red_warning));
         }
 
@@ -110,7 +111,8 @@ public class TickerArrayAdapter extends ArrayAdapter<Ticker> {
         TextView text7days = itemView.findViewById(R.id.text7days);
         text7days.setText(bean.getPercentChange7d() + " %");
         text7days.setTextColor(ContextCompat.getColor(this.getContext(), R.color.greenPrimaryDark));
-        if (bean.getPercentChange7d().startsWith("-")){
+
+        if (bean.getPercentChange7d() != null && bean.getPercentChange7d().startsWith("-")){
             text7days.setTextColor(ContextCompat.getColor(this.getContext(), R.color.red_warning));
         }
 
