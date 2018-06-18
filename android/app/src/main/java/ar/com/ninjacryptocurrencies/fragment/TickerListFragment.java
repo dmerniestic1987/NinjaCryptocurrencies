@@ -32,12 +32,7 @@ import ar.com.ninjacryptocurrencies.analytics.CryptoCurrenciesAnalytics;
 import ar.com.ninjacryptocurrencies.bean.Ticker;
 
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link TickerListFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link TickerListFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * TickerListFragment contiene la lista de las criptomonedas
  */
 public class TickerListFragment extends Fragment {
     private static final String TAG = "TickerListFragment";
