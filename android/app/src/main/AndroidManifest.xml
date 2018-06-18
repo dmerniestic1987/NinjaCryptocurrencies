@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ar.com.ninjacryptocurrencies"
-    android:versionCode="3"
-    android:versionName="1.0.2">
+    android:versionCode="4"
+    android:versionName="1.0.3">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -38,11 +38,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.AbooutAppActivity"
+            android:name=".activity.AboutAppActivity"
             android:label="@string/title_activity_term_condition"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
         </activity>
+
+        <service android:name=".services.NinjaCryptocurrenciesNotificationService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
+            </intent-filter>
+        </service>
+
+        <service android:name=".services.NinjaCryptocurrenciesInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"></action>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

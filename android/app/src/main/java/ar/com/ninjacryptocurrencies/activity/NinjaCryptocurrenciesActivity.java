@@ -15,8 +15,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import ar.com.ninjacryptocurrencies.R;
-import ar.com.ninjacryptocurrencies.activity.AbooutAppActivity;
-import ar.com.ninjacryptocurrencies.activity.SingInActivity;
 import ar.com.ninjacryptocurrencies.fragment.CodeFragment;
 import ar.com.ninjacryptocurrencies.fragment.AdsFragment;
 import ar.com.ninjacryptocurrencies.fragment.TickerListFragment;
@@ -78,7 +76,7 @@ public class NinjaCryptocurrenciesActivity extends AppCompatActivity implements 
 
         if (id == R.id.action_about_app) {
             Log.i(TAG, "About App");
-            Intent i = new Intent(this, AbooutAppActivity.class);
+            Intent i = new Intent(this, AboutAppActivity.class);
             startActivity(i);
             return true;
         }

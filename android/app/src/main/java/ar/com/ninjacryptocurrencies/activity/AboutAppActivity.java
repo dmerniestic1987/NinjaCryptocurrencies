@@ -17,7 +17,7 @@ import ar.com.ninjacryptocurrencies.R;
 /**
  * Muestra la información de la aplicación.
  */
-public class AbooutAppActivity extends AppCompatActivity implements View.OnClickListener{
+public class AboutAppActivity extends AppCompatActivity implements View.OnClickListener{
     private Button aceptar;
     private static String TAG = "AbooutApp";
     private TextView txt_app_version;

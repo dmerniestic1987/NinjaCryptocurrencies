@@ -13,10 +13,13 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.crashlytics.android.Crashlytics;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.crash.FirebaseCrash;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
@@ -146,14 +149,23 @@ public class TickerListFragment extends Fragment {
 
         @Override
         protected List<Ticker> doInBackground(Void... voids) {
-            Log.d("TickerList", "AsyncTask doInBackground");
-            final String url = getString(R.string.url_request_capCoinMarket);
-            RestTemplate restTemplate = new RestTemplate();
-            restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-            ResponseEntity<Ticker []> responseEntity = restTemplate.getForEntity(url, Ticker[].class);
 
-            Ticker [] arrayTicker = responseEntity.getBody();
-            return Arrays.asList(arrayTicker);
+
+            try {
+                Log.d("TickerList", "AsyncTask doInBackground");
+                final String url = getString(R.string.url_request_capCoinMarket);
+                RestTemplate restTemplate = new RestTemplate();
+
+                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+                ResponseEntity<Ticker []> responseEntity = restTemplate.getForEntity(url, Ticker[].class);
+                Ticker [] arrayTicker = responseEntity.getBody();
+                return Arrays.asList(arrayTicker);
+
+            } catch (RestClientException e) {
+                Crashlytics.log("No se pudo listar los tickets");
+                Crashlytics.logException(e);
+                return new ArrayList<Ticker>();
+            }
         }
 
         @Override
