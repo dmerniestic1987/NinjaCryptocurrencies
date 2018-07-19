@@ -120,7 +120,8 @@ public class NinjaCryptocurrenciesActivity extends AppCompatActivity implements 
     }
 
     private void goToSignInActivity() {
-        Intent i = new Intent(this, SingInActivity.class);
-        startActivity(i);
+        //TODO 25/07/2018: Descomentar para volver a verificar si hay login
+        //Intent i = new Intent(this, SingInActivity.class);
+        //startActivity(i);
     }
 }
