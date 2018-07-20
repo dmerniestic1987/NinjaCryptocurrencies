@@ -16,4 +16,10 @@
         android:icon="@drawable/ic_code_black_24dp"
         android:title="@string/title_code" />
 
+    <!-- TODO PASO 1: 25/07/2018: Descomentar para agregar Item Ninja -->
+    <item
+        android:id="@+id/navigation_taller_ninja"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Taller Ninja" />
+
 </menu>

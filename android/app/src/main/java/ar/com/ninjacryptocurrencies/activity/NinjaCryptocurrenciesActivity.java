@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 import ar.com.ninjacryptocurrencies.R;
 import ar.com.ninjacryptocurrencies.fragment.CodeFragment;
 import ar.com.ninjacryptocurrencies.fragment.AdsFragment;
+import ar.com.ninjacryptocurrencies.fragment.TallerNinjaFragment;
 import ar.com.ninjacryptocurrencies.fragment.TickerListFragment;
 
 /**
@@ -42,6 +43,11 @@ public class NinjaCryptocurrenciesActivity extends AppCompatActivity implements 
                 case R.id.navigation_code:
                     fragment = CodeFragment.newInstance();
                     break;
+                /* TODO PASO 1: CREA UNA INSTANCIA DEL FRAGMENT DEL TALLER */
+                case R.id.navigation_taller_ninja:
+                    fragment = new TallerNinjaFragment();
+                    break;
+
                 default:
                     break;
             }
@@ -62,6 +68,11 @@ public class NinjaCryptocurrenciesActivity extends AppCompatActivity implements 
         return true;
     }
 
+    /**
+     * Realiza alguna acción cuando se hace click en el menú contextual.
+     * @param item
+     * @return true if item selected
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
