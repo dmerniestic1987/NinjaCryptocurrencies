@@ -19,7 +19,8 @@
             android:text="TALLER NINJA 25/07/2018"
             android:textAlignment="center"
             android:textColor="@color/greenPrimary"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:layout_marginBottom="15dp"/>
 
         <EditText
             android:id="@+id/editDocumento"
@@ -30,7 +31,7 @@
             android:textColor="@color/colorLightGrayTextColor"
             android:textColorHint="@color/colorLightGrayTextColor"
             android:maxLength="11"
-            android:hint="Ingrese su documento" />
+            android:hint="CUIT/CUIL - AFIP lo persigue" />
 
         <Switch
             android:id="@+id/switchComprarBitcoin"
