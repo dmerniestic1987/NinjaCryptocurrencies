@@ -1,15 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.TallerNinjaFragment">
+    tools:context=".fragment.TallerNinjaFragment"
+    android:background="@color/colorDarkGrayBackground">
 
-    <!-- TODO PASO1: 25/07/2018: Agrega texto al fragment -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textTallerNinja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TALLER NINJA 25/07/2018"
+            android:textAlignment="center"
+            android:textColor="@color/greenPrimary"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editDocumento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:textColor="@color/colorLightGrayTextColor"
+            android:textColorHint="@color/colorLightGrayTextColor"
+            android:maxLength="11"
+            android:hint="Ingrese su documento" />
+
+        <Switch
+            android:id="@+id/switchComprarBitcoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorLightGrayTextColor"
+            android:text="Comprar Bitcoin" />
+
+        <Switch
+            android:id="@+id/switchComprarEthereum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorLightGrayTextColor"
+            android:text="Comprar Ethereum" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cctop" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Comenzar compra"
+            android:textColor="@color/greenPrimaryLight"
+            android:background="@color/purpleBackground"/>
+
+    </LinearLayout>
 
 
 </FrameLayout>
