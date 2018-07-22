@@ -34,6 +34,15 @@
             android:maxLength="11"
             android:hint="CUIT/CUIL - AFIP lo persigue" />
 
+        <TextView
+            android:id="@+id/textErrorDocumento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Debe completar el CUIT/CUIL"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
         <Switch
             android:id="@+id/switchComprarBitcoin"
             android:layout_width="match_parent"
@@ -51,9 +60,10 @@
             android:text="Comprar Ethereum" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageViewTarjetaBitcoin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="190dp"
+            android:layout_marginLeft="5dp"
             android:src="@drawable/cctop" />
 
         <Button

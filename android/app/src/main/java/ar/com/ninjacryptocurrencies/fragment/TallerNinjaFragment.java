@@ -3,29 +3,36 @@ package ar.com.ninjacryptocurrencies.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import ar.com.ninjacryptocurrencies.R;
 import ar.com.ninjacryptocurrencies.activity.NinjaCryptocurrenciesActivity;
+import ar.com.ninjacryptocurrencies.bean.TallerNinjaBean;
 
 /**
  * Fragment para el taller ninja. Simula una pantalla
  * para comenzar el proceso de compras de BitCoin o Ethereum
  */
-public class TallerNinjaFragment extends Fragment {
+public class TallerNinjaFragment extends Fragment implements View.OnClickListener{
     private static String TAG = "TallerNinjaFragment";
 
     private EditText editDocumento;
     private Switch switchComprarBitcoin;
     private Switch switchComprarEthereum;
     private Button buttonComenzarCompra;
+    private ImageView imageViewTarjetaBitcoin;
     private NinjaCryptocurrenciesActivity activity;
+    private TextView textErrorDocumento;
 
 
     public TallerNinjaFragment() {
@@ -55,6 +62,8 @@ public class TallerNinjaFragment extends Fragment {
         this.switchComprarBitcoin = view.findViewById(R.id.switchComprarBitcoin);
         this.switchComprarEthereum = view.findViewById(R.id.switchComprarEthereum);
         this.buttonComenzarCompra = view.findViewById(R.id.buttonComenzarCompra);
+        this.imageViewTarjetaBitcoin = view.findViewById(R.id.imageViewTarjetaBitcoin);
+        this.textErrorDocumento = view.findViewById(R.id.textErrorDocumento);
         return view;
     }
 
@@ -70,20 +79,63 @@ public class TallerNinjaFragment extends Fragment {
         super.onResume();
         Log.i(TAG, "onResume(): Hace que el Fragment empiece a interactuar con el usuario. Activity contenedor resumed");
 
-        //Seteamos las acciones con el click
-        this.buttonComenzarCompra.setOnClickListener(new View.OnClickListener() {
+        this.editDocumento.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View view) {
-                Log.i(TAG, "click - buttonComenzarCompra");
-                iniciarCompra();
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                textErrorDocumento.setVisibility(View.GONE);
             }
+
+            @Override
+            public void afterTextChanged(Editable editable) { }
         });
+
+        //Seteamos las acciones con el click
+        this.buttonComenzarCompra.setOnClickListener(this);
+
+        this.imageViewTarjetaBitcoin.setOnClickListener(this);
+
     }
 
     /**
      * Compieza el proceso de compra de BitCoin o Ethereum
      */
     private void iniciarCompra(){
+        Log.i(TAG, "iniciarCompra()");
+        TallerNinjaBean bean = new TallerNinjaBean();
+        bean.setComprarBitcoin(this.switchComprarBitcoin.isChecked());
+        bean.setComprarEthereum(this.switchComprarEthereum.isChecked());
+        bean.setDocumento(this.editDocumento.getText().toString());
 
+        Log.i(TAG, bean.toString());
+
+    }
+
+    /**
+     * Valida que la pantalla cuente con los datos correctos (Qw
+     * @return
+     */
+    private boolean validateScreen(){
+        String documento = this.editDocumento.getText().toString();
+        if (documento == null || documento.trim().isEmpty()){
+            this.textErrorDocumento.setVisibility(View.VISIBLE);
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Realiza la operación cuando se hace click en algún elemento como el
+     * botón comenzar compra o la imagen de las tarjetas de crédito
+     * @param view
+     */
+    @Override
+    public void onClick(View view) {
+        Log.i(TAG, "click - " + view.getClass().getCanonicalName());
+        if (validateScreen())
+            iniciarCompra();
     }
 }
