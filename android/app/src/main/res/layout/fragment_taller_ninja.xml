@@ -30,6 +30,7 @@
             android:inputType="number"
             android:textColor="@color/colorLightGrayTextColor"
             android:textColorHint="@color/colorLightGrayTextColor"
+            android:layout_marginLeft="5dp"
             android:maxLength="11"
             android:hint="CUIT/CUIL - AFIP lo persigue" />
 
@@ -38,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorLightGrayTextColor"
+            android:layout_marginLeft="5dp"
             android:text="Comprar Bitcoin" />
 
         <Switch
@@ -45,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorLightGrayTextColor"
+            android:layout_marginLeft="5dp"
             android:text="Comprar Ethereum" />
 
         <ImageView
@@ -54,12 +57,14 @@
             android:src="@drawable/cctop" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonComenzarCompra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Comenzar compra"
             android:textColor="@color/greenPrimaryLight"
-            android:background="@color/purpleBackground"/>
+            android:background="@color/purpleBackground"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
 
     </LinearLayout>
 
