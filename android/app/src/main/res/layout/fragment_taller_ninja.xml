@@ -32,7 +32,8 @@
             android:textColorHint="@color/colorLightGrayTextColor"
             android:layout_marginLeft="5dp"
             android:maxLength="11"
-            android:hint="CUIT/CUIL - AFIP lo persigue" />
+            android:hint="CUIT/CUIL - AFIP lo persigue"
+            android:nextFocusDown="@id/switchComprarBitcoin"/>
 
         <TextView
             android:id="@+id/textErrorDocumento"
@@ -41,6 +42,7 @@
             android:layout_marginLeft="5dp"
             android:text="Debe completar el CUIT/CUIL"
             android:textColor="@android:color/holo_red_dark"
+
             android:visibility="gone" />
 
         <Switch

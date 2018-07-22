@@ -1,6 +1,8 @@
 package ar.com.ninjacryptocurrencies.fragment;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
@@ -14,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import ar.com.ninjacryptocurrencies.R;
 import ar.com.ninjacryptocurrencies.activity.NinjaCryptocurrenciesActivity;
@@ -110,7 +113,20 @@ public class TallerNinjaFragment extends Fragment implements View.OnClickListene
         bean.setDocumento(this.editDocumento.getText().toString());
 
         Log.i(TAG, bean.toString());
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity);
+        alertDialogBuilder.setMessage("Está seguro que quiere comprar BitCoin (BTC) o Ethereum (ETH)");
+        alertDialogBuilder.setTitle("Compramos?");
+        alertDialogBuilder.setCancelable(true);
+        alertDialogBuilder.setIcon(R.drawable.ethereum);
+        alertDialogBuilder.setPositiveButton("Comprar",
+            new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        Toast.makeText(getContext(),"Ud. decidió comprar cripodivisas",Toast.LENGTH_LONG).show();
+                    }});
 
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
     }
 
     /**
