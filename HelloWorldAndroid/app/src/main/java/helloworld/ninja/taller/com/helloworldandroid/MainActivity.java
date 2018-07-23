@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        this.setTitle("Mundo triste y gris");
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -64,8 +63,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         this.textHello.setText("Hola MuNDo GeNiALL!!!!! :) :) :) :)");
-        View view = this.getWindow().getDecorView();
-        view.setBackgroundColor(ContextCompat.getColor(this, android.R.color.holo_orange_dark));
-
+        this.textHello.setTextColor(ContextCompat.getColor(this, android.R.color.holo_blue_light));
+        this.botonMundo.setVisibility(View.GONE);
+        this.setTitle("Mundo feliz con unicornios");
     }
 }
