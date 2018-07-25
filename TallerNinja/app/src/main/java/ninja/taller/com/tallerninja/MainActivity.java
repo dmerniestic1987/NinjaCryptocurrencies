@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.d("TAGTALLER", " CLICK EN SARLANGA MARLANGA");
 
+                //Con esto abrimos un nuevo Activity
+                Intent intent = new Intent(getBaseContext(), NuevoActivity.class);
+                startActivity(intent);
 
             }
         });
@@ -37,8 +40,37 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("TAGTALLER", " * * * *Estamos en onStart()");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("TAGTALLER", " * * * *Estamos en onResume()");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("TAGTALLER", " * * * *Estamos en onDestroy()");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("TAGTALLER", " * * * *Estamos en onStop()");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("TAGTALLER", " * * * *Estamos en onPause()");
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
         Log.d("TAGTALLER", "onCreateMenuOption ** ");
@@ -47,9 +79,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
