@@ -120,7 +120,8 @@ public class NinjaCryptocurrenciesActivity extends AppCompatActivity implements 
     }
 
     private void goToSignInActivity() {
-        Intent i = new Intent(this, SingInActivity.class);
-        startActivity(i);
+        Log.d("Ninja", "Se tendria que redigir al login activity");
+        //Intent i = new Intent(this, SingInActivity.class);
+        //startActivity(i);
     }
 }
